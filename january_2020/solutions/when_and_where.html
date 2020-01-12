@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+  <head>
+    <title>When and Where: Solution</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../scripts_etc/style.css"/>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>When and Where: Solution</h2>
+    <a href="../when_and_where.html">(back to puzzle)</a>
+    <p>By looking at the HTML and JavaScript on the page or by watching single cells of the grid of letters, solvers can notice that each letter changes with some period. (These periods are primes from 11 to 23, but this turns out not to be too important.) As clued by the flavortext, solvers must figure out what the grid looks like after billions of steps, specifically, after integer multiples of a billion steps. This is likely best done by computing remainders or some similar technique; it may be possible to brute-force, but a billion is high enough that that will take significant time.</p>
+    <p>Most of the resulting grids are complete nonsense, but some aren't. Notably, the grid after exactly one billion steps ("Grid 1000000000") has two five-letter words in it, one vertical and one horizontal, and some of the other grids at multiples of a billion steps do too. The relevant grids are:</p>
+    <p>Grid 1000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>W</td>
+        <td>H</td>
+        <td>R</td>
+        <td>O</td>
+        <td>Y</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>Y</td>
+        <td>P</td>
+        <td>C</td>
+        <td>Y</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>A</td>
+        <td>N</td>
+        <td>C</td>
+        <td>E</td>
+      </tr>
+      <tr>
+        <td>O</td>
+        <td>K</td>
+        <td>B</td>
+        <td>U</td>
+        <td>R</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>P</td>
+        <td>Y</td>
+        <td>R</td>
+        <td>B</td>
+      </tr>
+    </table>
+    <p>Grid 4000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>K</td>
+        <td>K</td>
+        <td>F</td>
+        <td>T</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Q</td>
+        <td>N</td>
+        <td>X</td>
+        <td>I</td>
+        <td>P</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>H</td>
+        <td>A</td>
+        <td>D</td>
+        <td>E</td>
+      </tr>
+      <tr>
+        <td>K</td>
+        <td>Y</td>
+        <td>D</td>
+        <td>A</td>
+        <td>K</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>U</td>
+        <td>Z</td>
+        <td>L</td>
+        <td>L</td>
+      </tr>
+    </table>
+    <p>Grid 8000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>Z</td>
+        <td>E</td>
+        <td>B</td>
+        <td>R</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>M</td>
+        <td>F</td>
+        <td>R</td>
+        <td>Z</td>
+        <td>S</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>W</td>
+        <td>R</td>
+        <td>Q</td>
+        <td>I</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>U</td>
+        <td>M</td>
+        <td>X</td>
+        <td>D</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>I</td>
+        <td>G</td>
+        <td>C</td>
+        <td>E</td>
+      </tr>
+    </table>
+    <p>Grid 15000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>R</td>
+        <td>X</td>
+        <td>T</td>
+        <td>N</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>T</td>
+        <td>C</td>
+        <td>E</td>
+        <td>O</td>
+        <td>T</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>D</td>
+        <td>A</td>
+        <td>E</td>
+        <td>V</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>D</td>
+        <td>S</td>
+        <td>B</td>
+        <td>S</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>L</td>
+        <td>E</td>
+        <td>E</td>
+        <td>T</td>
+      </tr>
+    </table>
+    <p>Grid 18000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>S</td>
+        <td>C</td>
+        <td>R</td>
+        <td>U</td>
+        <td>B</td>
+      </tr>
+      <tr>
+        <td>U</td>
+        <td>A</td>
+        <td>D</td>
+        <td>C</td>
+        <td>R</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>F</td>
+        <td>C</td>
+        <td>G</td>
+        <td>E</td>
+      </tr>
+      <tr>
+        <td>Q</td>
+        <td>K</td>
+        <td>Y</td>
+        <td>M</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>D</td>
+        <td>Y</td>
+        <td>B</td>
+        <td>D</td>
+      </tr>
+    </table>
+    <p>In each of these grids, the letter the two five-letter words overlap in is between A and E, and each of the letters from A to E is the overlap once. This means that we can sort the grids by the letter in which they overlap. Here's the result of doing that, with the words highlighted (horizontal in light green, vertical in dark green, overlap in an intermediate shade).</p>
+    <p>Grid 8000000000:</p>
+    <table class="grid">
+      <tr>
+        <td style="background-color: #005533;">Z</td>
+        <td style="background-color: #005533;">E</td>
+        <td style="background-color: #005533;">B</td>
+        <td style="background-color: #005533;">R</td>
+        <td style="background-color: #00aa33;">A</td>
+      </tr>
+      <tr>
+        <td>M</td>
+        <td>F</td>
+        <td>R</td>
+        <td>Z</td>
+        <td style="background-color: #00ee33;">S</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>W</td>
+        <td>R</td>
+        <td>Q</td>
+        <td style="background-color: #00ee33;">I</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>U</td>
+        <td>M</td>
+        <td>X</td>
+        <td style="background-color: #00ee33;">D</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>I</td>
+        <td>G</td>
+        <td>C</td>
+        <td style="background-color: #00ee33;">E</td>
+      </tr>
+    </table>
+    <p>Grid 18000000000:</p>
+    <table class="grid">
+      <tr>
+        <td style="background-color: #005533;">S</td>
+        <td style="background-color: #005533;">C</td>
+        <td style="background-color: #005533;">R</td>
+        <td style="background-color: #005533;">U</td>
+        <td style="background-color: #00aa33;">B</td>
+      </tr>
+      <tr>
+        <td>U</td>
+        <td>A</td>
+        <td>D</td>
+        <td>C</td>
+        <td style="background-color: #00ee33;">R</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>F</td>
+        <td>C</td>
+        <td>G</td>
+        <td style="background-color: #00ee33;">E</td>
+      </tr>
+      <tr>
+        <td>Q</td>
+        <td>K</td>
+        <td>Y</td>
+        <td>M</td>
+        <td style="background-color: #00ee33;">A</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>D</td>
+        <td>Y</td>
+        <td>B</td>
+        <td style="background-color: #00ee33;">D</td>
+      </tr>
+    </table>
+    <p>Grid 1000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>W</td>
+        <td>H</td>
+        <td>R</td>
+        <td style="background-color: #00ee33;">O</td>
+        <td>Y</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>Y</td>
+        <td>P</td>
+        <td style="background-color: #00ee33;">C</td>
+        <td>Y</td>
+      </tr>
+      <tr>
+        <td style="background-color: #005533;">D</td>
+        <td style="background-color: #005533;">A</td>
+        <td style="background-color: #005533;">N</td>
+        <td style="background-color: #00aa33;">C</td>
+        <td style="background-color: #005533;">E</td>
+      </tr>
+      <tr>
+        <td>O</td>
+        <td>K</td>
+        <td>B</td>
+        <td style="background-color: #00ee33;">U</td>
+        <td>R</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>P</td>
+        <td>Y</td>
+        <td style="background-color: #00ee33;">R</td>
+        <td>B</td>
+      </tr>
+    </table>
+    <p>Grid 4000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>K</td>
+        <td>K</td>
+        <td>F</td>
+        <td style="background-color: #00ee33;">T</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>Q</td>
+        <td>N</td>
+        <td>X</td>
+        <td style="background-color: #00ee33;">I</td>
+        <td>P</td>
+      </tr>
+      <tr>
+        <td style="background-color: #005533;">S</td>
+        <td style="background-color: #005533;">H</td>
+        <td style="background-color: #005533;">A</td>
+        <td style="background-color: #00aa33;">D</td>
+        <td style="background-color: #005533;">E</td>
+      </tr>
+      <tr>
+        <td>K</td>
+        <td>Y</td>
+        <td>D</td>
+        <td style="background-color: #00ee33;">A</td>
+        <td>K</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>U</td>
+        <td>Z</td>
+        <td style="background-color: #00ee33;">L</td>
+        <td>L</td>
+      </tr>
+    </table>
+    <p>Grid 15000000000:</p>
+    <table class="grid">
+      <tr>
+        <td>R</td>
+        <td>X</td>
+        <td style="background-color: #00ee33;">T</td>
+        <td>N</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>T</td>
+        <td>C</td>
+        <td style="background-color: #00ee33;">E</td>
+        <td>O</td>
+        <td>T</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>D</td>
+        <td style="background-color: #00ee33;">A</td>
+        <td>E</td>
+        <td>V</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>D</td>
+        <td style="background-color: #00ee33;">S</td>
+        <td>B</td>
+        <td>S</td>
+      </tr>
+      <tr>
+        <td style="background-color: #005533;">F</td>
+        <td style="background-color: #005533;">L</td>
+        <td style="background-color: #00aa33;">E</td>
+        <td style="background-color: #005533;">E</td>
+        <td style="background-color: #005533;">T</td>
+      </tr>
+    </table>
+    <p>Now we use the title and the flavortext of the puzzle. The numbers of billions of steps it takes to get these grids are 8, 18, 1, 4, and 15, which when converted to letters via A=1, Z=26 become H, R, A, D, and O. Grid 0 lets us associate positions on the 5x5 grid to letters (since it uses every letter but Z); the letters associated with the positions of the overlaps are, in order, E, E, N, N, and W. Reading "when and where" each pair of words intersects, we thus get HE, RE, AN, DN, and OW, which spells out "here and now". We also know from the bottom of the puzzle that the answer is seven letters long. There's no word that means "here and now" with seven letters, but there is a seven-letter word that can mean "here" and can also mean "now", and that word is the answer.</p>
+    <p>Answer: present</p>
+    <p>Note: This puzzle was inspired by the 2019 Galactic Puzzlehunt's puzzle Ministry of Word Searches (grids of letters, each with an associated number) and, more loosely, the 2009 MIT Mystery Hunt's Orbital Nexus (a puzzle that changes, though I didn't want to make a puzzle that changed based on when it was loaded since that seemed to be asking for people to overload the puzzle access mechanism).</p>
+  </body>
+</html>

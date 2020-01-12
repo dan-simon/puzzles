@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Leftovers: Solution</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../scripts_etc/style.css"/>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Leftovers: Solution</h2>
+    <a href="../leftovers.html">(back to puzzle)</a>
+    <p>The filenames of the audio files here suggest that there's a missing leftovers_b.wav. Trying to access leftovers_b.wav doesn't work; that file doesn't exist. The next reasonable thing to do is data collection, that is, finding what the notes in each file are. It turns out each file's first note is in its filename, and each file uses only notes in C major. The next thing to do is note that each file is the same length. Indeed, each file also has the same tempo, and each note is a constant multiple of a certain length (11308 frames, at 44100 frames per second). Each file is 15 times this length. This means that it is possible to make a table of notes in each file over time.</p>
+    <p>At this point, the solver should note that the columns of this table don't have repetition. (There are other equivalent things that can be noticed; basically, no two files play the same note at the same time.) Furthermore, there's a seventh option for each note that's left over (as hinted by the title and the flavor text). The solver should at this point try to make a file (which is what leftovers_b.wav would be if it existed) from the missing notes (or just sing them if they're sufficiently good at that). The only tricky things are that it's unclear what octave the notes  (specifically, the Cs, since all the other missing notes occur in only one octave in the other files) should be in (always taking the closest note to the previous note works) and that none of the given files have adjacent notes that are the same, and instead they just make a note longer, so the solver should do the same (this is relevant for four notes that are twice as long as the other seven, rather than being the same note repeated twice). The resulting melody is as below:</p>
+    <audio controls>
+      <source src="resources/leftovers_b.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <p>This is the first line of a well-known recent song with an eight-letter title, as clued by the eight blanks. (In fact, this song has the same tempo as the given audio.) This title, which is also contained in the first line, is the answer.</p>
+    <p>Answer: senorita</p>
+    <p>Notes: I know basically nothing about music, and I was trying to make a music puzzle which could be solved either by someone with music knowledge or by someone with programming knowledge. I hope I succeeded. This puzzle was very loosely inspired by the Galactic Puzzle Hunt 2018 puzzle Destructive Interference (though hopefully it's far easier), in the sense of being an audio puzzle not requiring song identification (except at the end, I guess). The fact that there's a 2004 MIT Mystery Hunt puzzle called Leftovers (which is very different) is, I believe, a complete coincidence (it's possible though unlikely that I saw this puzzle before and subconsciously remembered its name). I used wav due to wav being somewhat easier to manipulate programmatically; in fact, it's probably possible to determine how exactly the wav files in this puzzle were created (in the sense of being able to get the exact audio file linked in this solution based on the six others).</p>
+  </body>
+</html>

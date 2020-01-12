@@ -1,0 +1,99 @@
+Putting Together
+
+I used the internet to make this, so you can use it too. But only use it where you need it,
+and if you don't have free access to the internet you can figure out as much as you can alone.
+
+This puzzle has several parts. The parts are:
+Iterated addition 1
+Animal families
+People liked that, so let's do it twice
+Through lands and oceans
+Largest
+{TODO: make and add puzzle}
+{TODO: make and add puzzle}
+Keypad runes
+Iterated addition 2
+
+The five-line section between braces is not part of any of the sections, but it is helpful.
+
+Iterated addition 1: metal 2
+
+0 1 -> 1
+0 2 -> 0
+0 5 -> 2
+1 0 -> 0
+1 7 -> 13
+2 6 -> 13
+3 7 -> ???
+
+Animal families: space 1
+
+Look at the diagonal.
+
+Electric eel
+Red panda
+Two-toed sloth
+California condor
+Pig-nosed turtle
+
+People liked that, so let's do it twice: gas 1
+
+A grassy area in a college campus
+A technique that can be used to make a shape
+A type of spell (What is this one doing here?)
+A type of cephalopod
+Making all the different parts of something into one
+Reflectional symmetry
+Removing or destroying a large part of something
+The month when school usually starts
+The most common type of star
+The name of the shape being made
+The other possible name of the shape being made
+
+Through lands and oceans: space 1
+
+Start in the capital of Japan, which is on the coast of the Pacific Ocean.
+Go 3,859 miles, to a place which is on the coast of the Pacific Ocean.
+Go 8,547 miles, to a place which is on the coast of the Atlantic Ocean.
+Go 3,341 miles, to a place which is on the coast of the Atlantic Ocean.
+Go 5,159 miles, to a place which is on the coast of the Indian Ocean.
+Return to where you started, going 8,637 miles.
+
+Largest: space 1
+
+L / (A + R) - G / (E + S + T) = ???
+where
+L = Largest two-digit triangular number
+A = Radius of largest planet in the Solar System in Earth radii (rounded down)
+R = Largest even prime
+G = Order of largest symmetric group with a nontrivial outer automorphism
+E = Largest square Fibonacci number
+S = Largest number directly between a square and a cube
+T = Largest atomic number of a known element
+
+{
+5: I'm just getting tired of writing these puzzles and I want to write a long rambling sentence which (TODO) I have to take out at some point.
+6: Actually, something just came to my mind. This might be lunacy, but I'm thinking of going to the extreme and not giving any help at all.
+7: Since usually that would make the remaining puzzles impossible, I'll say that the mediocre (unused) options are alliterative.
+8: But no, that would make the puzzles too easy. Maybe I could instead say that the second correct answer is in the first.
+9: TODO: XXX no good idea found yet, but slight signs of one are coming. Maybe a 68.3% chance or so.
+}
+
+{TODO: make and add puzzle}: double space 1
+
+{TODO: make and add puzzle}: double space 2
+
+Keypad runes: gas 1
+
+Telephone, not computer, calculator, or elevator.
+13 28 / 13 17 46 79 / 17 19 39
+
+Iterated addition 2: metal 1
+
+0 2 -> 0
+0 3 -> 1
+0 6 -> 3
+1 1 -> 1
+1 8 -> 21
+2 7 -> 21
+3 8 -> ???

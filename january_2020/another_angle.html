@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Another Angle</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../scripts_etc/style.css"/>
+    <script src="../scripts_etc/bcrypt.min.js"></script>
+    <script src="../scripts_etc/check_answer.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <div class="header">
+      Answer to Another Angle: <input id="answer" type="text"/><input type="submit" onclick="checkAnswer(0, 8)" value="Check"/> <span id="check-answer-result"/>
+    </div>
+    <h2>Another Angle</h2>
+    <p class="flavortext">The answer to this puzzle is missing and I don't remember how to solve it. The last line in particular seems vague about which letter to take from each row.</p>
+    <ul class="with-header" header-text="Left:">
+      <li>The highest grade</li>
+      <li>A type of Hawaiian lava</li>
+      <li>Animal or baseball equipment</li>
+      <li>Inverse of cosecant</li>
+      <li>The claw on the foot of a bird of prey</li>
+      <li>The point furthest from the Earth on an orbit around it</li>
+      <li>American (not British) name for a red insect with black spots</li>
+      <li>A specimen not from a taxon's type locality but still in the taxon according to the taxon author</li>
+      <li>One who makes or otherwise works with locks</li>
+      <li>Something to add to liquid to stop it from freezing, as its name suggests</li>
+      <li>An animal that eats grass</li>
+      <li>Welcoming someone to their new house, or, used literally, turning on the heat inside</li>
+    </ul>
+    <ul class="with-header" header-text="Right:">
+      <li>First zone</li>
+      <li>Jazz without German approval</li>
+      <li>Endless park</li>
+      <li>Overturned gas evaporates first</li>
+      <li>Turned around, Japanese coin mantra</li>
+      <li>Overturned car in, say, ageless hole?</li>
+      <li>In sigh, first technique</li>
+      <li>Two hundred and one in Yemen port city die from diet</li>
+      <li>Before first road, California initially stole trains</li>
+      <li>G8, say, keep Eritrea</li>
+      <li>Six monster lizards containing smashed tin start mining</li>
+      <li>United Nations and Germany train in red</li>
+    </ul>
+    <table class="grid">
+      <tr>
+        <td>G</td>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td>Z</td>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="filled"/>
+        <td/>
+        <td/>
+        <td/>
+        <td>E</td>
+      </tr>
+    </table>
+    <p>Fill the above grid (to help you, the corners are already given). Take one letter from each row of the above grid, from top to bottom. This will give a 13-letter clue.</p>
+  </body>
+</html>

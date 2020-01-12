@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <title>What Does It Mean?: Solution</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../scripts_etc/style.css"/>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>What Does It Mean?: Solution</h2>
+    <a href="../what_does_it_mean.html">(back to puzzle)</a>
+    <p>The answer, not too surprisingly, isn't actually hexoctahedron, because that would be far too easy.</p>
+    <p>In this puzzle, each letter represents some number or operation. Each line has a nonzero value (in most cases 1, which means "true" in this puzzle). This puzzle uses prefix notation. That is, operators are put before both of their operands. This allows for unambiguous parsing without precedence. A table of correspondences is below (the representations are how the letters are represented on a page linked below):</p>
+    <table style="width: 70%">
+      <colgroup>
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <col style="width: 70%">
+      </colgroup>
+      <thead>
+        <tr>
+          <td>letter</td>
+          <td>representation</td>
+          <td>meaning</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>d</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>c</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>v</td>
+          <td>3</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>b</td>
+          <td>4</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>u</td>
+          <td>5</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>e</td>
+          <td>=</td>
+          <td>equality (1 if equal, 0 if not)</td>
+        </tr>
+        <tr>
+          <td>l</td>
+          <td>&lt;</td>
+          <td>less than (1 if first input is less than second, 0 if not)</td>
+        </tr>
+        <tr>
+          <td>g</td>
+          <td>&gt;</td>
+          <td>greater than (1 if first input is greater than second, 0 if not)</td>
+        </tr>
+        <tr>
+          <td>t</td>
+          <td>+</td>
+          <td>addition</td>
+        </tr>
+        <tr>
+          <td>s</td>
+          <td>-</td>
+          <td>absolute value of the difference</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>×</td>
+          <td>multiplication</td>
+        </tr>
+        <tr>
+          <td>z</td>
+          <td>/</td>
+          <td>division</td>
+        </tr>
+        <tr>
+          <td>q</td>
+          <td>//</td>
+          <td>quotient (floor of the result of division)</td>
+        </tr>
+        <tr>
+          <td>r</td>
+          <td>mod</td>
+          <td>remainder or mod</td>
+        </tr>
+        <tr>
+          <td>j</td>
+          <td>min</td>
+          <td>minimum</td>
+        </tr>
+        <tr>
+          <td>k</td>
+          <td>max</td>
+          <td>maximum</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>all</td>
+          <td>list of all positive integers with property</td>
+        </tr>
+        <tr>
+          <td>h</td>
+          <td>having property</td>
+          <td>having property (introduces a variable)</td>
+        </tr>
+        <tr>
+          <td>f</td>
+          <td>not</td>
+          <td>not</td>
+        </tr>
+        <tr>
+          <td>o</td>
+          <td>y</td>
+          <td>outermost variable</td>
+        </tr>
+        <tr>
+          <td>n</td>
+          <td>z</td>
+          <td>second-outermost variable</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Here's some additional helpful information:</p>
+    <ul>
+      <li>Though there are often two letters representing numbers in a row, they always represent separate numbers in such cases; ww might, for example, occur as part of tww (1 + 1), which is c (2), but ww would never mean 11 (as one might expect from base 10) or 7 (as one might expect from base 6). Thus, we do not know what base is being used, and it arguably doesn't make sense to ask.</li>
+      <li>Numbers and true/false are often used in place of each other. When considering true or false as a number, false is considered to be 0 and true is considered to be 1. When considering a number as true or false, 0 is considered to be false and every other number is considered to be true. This is a common convention in programming, but it should be possible to determine from the given data.</li>
+      <li>t, x, j, and k can be applied to a list, reducing the list in the appropriate way. Indeed, this is all we see lists used for. That is, a is always followed by h and always preceded by t, x, j, or k.</li>
+    </ul>
+    <p><a href="what_does_it_mean_supplement_1.html">This link</a> shows the puzzle with letters replaced by their representations as given in the above table. <a href="what_does_it_mean_supplement_2.html">This link</a> shows the puzzle with additional conveniences, such as using infix notation rather than prefix notation.</p>
+    <p>After determining what all the letters mean, it's possible to solve the puzzle. One reasonable thing to do is to see what the meaning of the supposed answer hexoctahedron is (the title clues both this step and the general process of solving this puzzle). We can determine this via the following steps, each of which takes us slightly closer to comprehensibility:</p>
+    <ul>
+      <li>hexoctahedron
+      <li>having property = × y 2 + all having property = 0 mod y z</li>
+      <li>y such that y × 2 = the sum of all z such that (0 = y mod z)</li>
+      <li>y such that the sum of all divisors of y is 2y</li>
+      <li>y such that the sum of all divisors of y apart from y itself is y</li>
+    </ul>
+    <p>There is a mathematical term for such numbers, and this term is the actual answer to the puzzle.</p>
+    <p>Answer: perfect</p>
+    <p>Note: This was partially inspired by "Whoa - I know Shoe-buckling" from the 2003 MIT Mystery Hunt, though (as I discovered only when writing this attribution, after constructing the puzzle) it's more like "Call Me" from the 2005 MIT Mystery Hunt. I expect this to be one of the harder puzzles.</p>
+  </body>
+</html>

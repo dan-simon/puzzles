@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reuse: Solution (Spot the Difference)</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../scripts_etc/style.css"/>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Reuse: Solution (Spot the Difference)</h2>
+    <a href="../reuse.html">(back to Reuse)</a> <a href="reuse.html">(back to Reuse solution)</a> <a href="../spot_the_difference.html">(to Spot the Difference)</a> <a href="spot_the_difference.html">(to Spot the Difference solution)</a>
+    <p>Every other column of 8x8: In Spot the Difference, removing the 36 numbers we already used, we can reform the remaining 64 numbers into an 8x8 square, inserting the unused numbers into the square left to right and top to bottom. This square is as follows:</p>
+      <table class="grid">
+      <tr>
+        <td>2</td>
+        <td>20</td>
+        <td>1</td>
+        <td>18</td>
+        <td>2</td>
+        <td>15</td>
+        <td>2</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>8</td>
+        <td>38</td>
+        <td>5</td>
+        <td>3</td>
+        <td>6</td>
+        <td>7</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>5</td>
+        <td>85</td>
+        <td>31</td>
+        <td>11</td>
+        <td>45</td>
+        <td>6</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td>44</td>
+        <td>33</td>
+        <td>18</td>
+        <td>1</td>
+        <td>14</td>
+        <td>18</td>
+        <td>31</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td>19</td>
+        <td>12</td>
+        <td>15</td>
+        <td>22</td>
+        <td>5</td>
+        <td>9</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>17</td>
+        <td>21</td>
+        <td>15</td>
+        <td>11</td>
+        <td>7</td>
+        <td>4</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>21</td>
+        <td>50</td>
+        <td>20</td>
+        <td>13</td>
+        <td>1</td>
+        <td>6</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>1</td>
+        <td>7</td>
+        <td>47</td>
+        <td>2</td>
+        <td>20</td>
+        <td>15</td>
+        <td>99</td>
+      </tr>
+    </table>
+    <p>After using A=1, Z=26 encoding, interpreting numbers higher than 26 as spaces, and highlighting every other column, the square becomes:</p>
+      <table class="grid">
+      <tr>
+        <td>B</td>
+        <td style="background-color: #00ee33">T</td>
+        <td>A</td>
+        <td style="background-color: #00ee33">R</td>
+        <td>B</td>
+        <td style="background-color: #00ee33">O</td>
+        <td>B</td>
+        <td style="background-color: #00ee33">I</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td style="background-color: #00ee33">H</td>
+        <td></td>
+        <td style="background-color: #00ee33">E</td>
+        <td>C</td>
+        <td style="background-color: #00ee33">F</td>
+        <td>G</td>
+        <td style="background-color: #00ee33">V</td>
+      </tr>
+      <tr>
+        <td>V</td>
+        <td style="background-color: #00ee33">E</td>
+        <td></td>
+        <td style="background-color: #00ee33"></td>
+        <td>K</td>
+        <td style="background-color: #00ee33"></td>
+        <td>F</td>
+        <td style="background-color: #00ee33">E</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="background-color: #00ee33"></td>
+        <td></td>
+        <td style="background-color: #00ee33">R</td>
+        <td>A</td>
+        <td style="background-color: #00ee33">N</td>
+        <td>R</td>
+        <td style="background-color: #00ee33"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="background-color: #00ee33">S</td>
+        <td>L</td>
+        <td style="background-color: #00ee33">O</td>
+        <td>V</td>
+        <td style="background-color: #00ee33">E</td>
+        <td>I</td>
+        <td style="background-color: #00ee33">O</td>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td style="background-color: #00ee33">Q</td>
+        <td>U</td>
+        <td style="background-color: #00ee33">O</td>
+        <td>K</td>
+        <td style="background-color: #00ee33">G</td>
+        <td>D</td>
+        <td style="background-color: #00ee33">N</td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td style="background-color: #00ee33">U</td>
+        <td></td>
+        <td style="background-color: #00ee33">T</td>
+        <td>M</td>
+        <td style="background-color: #00ee33">A</td>
+        <td>F</td>
+        <td style="background-color: #00ee33">E</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td style="background-color: #00ee33">A</td>
+        <td>G</td>
+        <td style="background-color: #00ee33"></td>
+        <td>B</td>
+        <td style="background-color: #00ee33">T</td>
+        <td>O</td>
+        <td style="background-color: #00ee33"></td>
+      </tr>
+    </table>
+    <p>Reading down every other column, the highlighted squares spell "the square root of negative one ". As a subtle hint, the values of the first five spaces in this hidden message are 44, 31, 47, 45, and 31, and these values minus 26 using A=1, Z=26 encoding spell "reuse", the title of the puzzle this message is used for. (The space at the end is 99 and is needed for padding.)</p>
+    <p>We get i.</p>
+  </body>
+</html>

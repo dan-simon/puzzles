@@ -1,0 +1,205 @@
+Yes, the solutions are below. The answer to each puzzle is a number, and the answer to the meta is a word.
+
+Putting Together
+
+I used the internet to make this, so you can use it too. But only use it where you need it,
+and if you don't have free access to the internet you can figure out as much as you can alone.
+
+This puzzle has several parts. The parts are:
+Iterated addition 1
+Animal families
+People liked that, so let's do it twice
+Through lands and oceans
+Largest
+{TODO: make and add puzzle}
+{TODO: make and add puzzle}
+Keypad runes
+Iterated addition 2
+
+The five-line section between braces is not part of any of the sections, but it is helpful.
+
+Iterated addition 1: metal 2
+
+0 1 -> 1
+0 2 -> 0
+0 5 -> 2
+1 0 -> 0
+1 7 -> 13
+2 6 -> 13
+3 7 -> ???
+
+Solution: The fact that 01, 02, 05, 10, 17, 26, 37 are 1 more than the squares of 0 through 6 is irrelevant.
+
+For each line, consider the sequence where the first number is 1, the second number is the first number before the arrow, and each number in the sequence is the sum of the previous two, and index into this sequence by the second number before the arrow. The result will be the number after the arrow. This is shown for each line below:
+
+0 1: sequence (starting with the zeroth number) is 1 1 0 1 1 2 3 5 8 13.., number in position 1 is 1
+0 2: sequence (starting with the zeroth number) is 1 1 0 1 1 2 3 5 8 13..., number in position 2 is 0
+0 5: sequence (starting with the zeroth number) is 1 1 0 1 1 2 3 5 8 13..., number in position 5 is 2
+1 0: sequence (starting with the zeroth number) is 0 1 1 2 3 5 8 13 21 34..., number in position 0 is 0
+1 7: sequence (starting with the zeroth number) is 0 1 1 2 3 5 8 13 21 34..., number in position 7 is 13
+2 6: sequence (starting with the zeroth number) is 1 1 2 3 5 8 13 21 34 55..., number in position 6 is 13
+3 7: sequence (starting with the zeroth number) is 2 1 3 4 7 11 18 29 47 76..., number in position 7 is 29
+
+Answer: 29
+
+Animal families: space 1
+
+Look at the diagonal.
+
+Electric eel
+Red panda
+Two-toed sloth
+California condor
+Pig-nosed turtle
+
+Solution: Find the family names (using, for example, Wikipedia). The answers are:
+
+Gymnotidae
+Ailuridae
+Choloepodidae
+Cathartidae
+Carettochelyidae
+
+So we get gioht. That isn't even that close to a word. However, since this puzzle was made, the two-toed sloth family name has changed, and Wikipedia has changed its position in a dispute about the electric eel family name. Using the family names from Wikipedia from a few years ago, we get:
+
+Electrophoridae
+Ailuridae
+Megalonychidae
+Cathartidae
+Carettochelyidae
+
+Now we get eight.
+
+Answer: 8
+
+People liked that, so let's do it twice: gas 1
+
+A grassy area in a college campus
+A technique that can be used to make a shape
+A type of spell (What is this one doing here?)
+A type of cephalopod
+Making all the different parts of something into one
+Reflectional symmetry
+Removing or destroying a large part of something
+The month when school usually starts
+The most common type of star
+The name of the shape being made
+The other possible name of the shape being made
+
+Solution: Each clue has an answer with the root for the name of an integer between one and ten in it, as below:
+
+A grassy area in a college campus: quadrangle, 4
+A technique that can be used to make a shape: trisection, 3 (this and the last two are really unfair)
+A type of spell (What is this one doing here?): hex 6, (the "What is this one doing here?" references the fact that this doesn't mean six)
+A type of cephalopod: octopus, 8
+Making all the different parts of something into one: unification, 1
+Reflectional symmetry: bilateral, 2
+Removing or destroying a large part of something: decimating, 10
+The month when school usually starts: September, 7
+The most common type of star: pentagram, 5
+The name of the shape being made: heptagon, 7
+The other possible name of the shape being made: nonagon, 9
+
+Every integer between 1 and 10 appears once, except for 7, which appears twice. This, plus the fact that people like 7 (is this even true, or do they just choose 7 when asked to choose a digit and think it's lucky?) gives us the answer.
+
+Answer: 7
+
+Through lands and oceans: space 1
+
+Start in the capital of Japan, which is on the coast of the Pacific Ocean.
+Go 3,859 miles, to a place which is on the coast of the Pacific Ocean.
+Go 8,547 miles, to a place which is on the coast of the Atlantic Ocean.
+Go 3,341 miles, to a place which is on the coast of the Atlantic Ocean.
+Go 5,159 miles, to a place which is on the coast of the Indian Ocean.
+Return to where you started, going 8,637 miles.
+
+Solution: The path described (assuming all the places passed through are cities) is Tokyo-Honolulu-Recife-El Jadida-East London. Taking the first letters, we get our answer.
+
+Answer: 3
+
+Largest: space 1
+
+L / (A + R) - G / (E + S + T) = ???
+where
+L = Largest two-digit triangular number
+A = Radius of largest planet in the Solar System in Earth radii (rounded down)
+R = Largest even prime
+G = Order of largest symmetric group with a nontrivial outer automorphism
+E = Largest square Fibonacci number
+S = Largest number directly between a square and a cube
+T = Largest atomic number of a known element
+
+Solution: L = 91, A = 11, R = 2, G = 720 (it's S_6), E = 144 (the only one other than 1), S = 26, T = 118, L / (A + R) - G / (E + S + T) = 91 / (11 + 2) - 720 / (144 + 26 + 118) = 91 / 13 + 720 / 288 = 7 - 2.5 = 4.5. This is unfair (a fractional numerical answer is like a non-word verbal answer), but it's apparently the answer.
+
+Answer: 4.5
+
+{
+5: I'm just getting tired of writing these puzzles and I want to write a long rambling sentence which (TODO) I have to take out at some point.
+6: Actually, something just came to my mind. This might be lunacy, but I'm thinking of going to the extreme and not giving any help at all.
+7: Since usually that would make the remaining puzzles impossible, I'll say that the mediocre (unused) options are alliterative.
+8: But no, that would make the puzzles too easy. Maybe I could instead say that the second correct answer is in the first.
+9: TODO: XXX no good idea found yet, but slight signs of one are coming. Maybe a 68.3% chance or so.
+}
+
+{TODO: make and add puzzle}: double space 1
+
+Solution: The metapuzzle solution will explain how this answer is determined (there's a small bit of backsolving involved).
+
+Answer: 8
+
+{TODO: make and add puzzle}: double space 2
+
+Solution: The metapuzzle solution will explain how this answer is determined (there's a small bit of backsolving involved).
+
+Answer: 5
+
+Keypad runes: gas 1
+
+Telephone, not computer, calculator, or elevator.
+13 28 / 13 17 46 79 / 17 19 39
+
+Solution: Draw lines between the given pairs of numbers on a telephone keypad, getting three symbols (one for each set of numbers separated by spaces). You'll get T, E, N.
+
+Answer: 10
+
+Iterated addition 2: metal 1
+
+0 2 -> 0
+0 3 -> 1
+0 6 -> 3
+1 1 -> 1
+1 8 -> 21
+2 7 -> 21
+3 8 -> ???
+
+Solution: The fact that 02, 03, 06, 11, 18, 27, 38 are 2 more than the squares of 0 through 6 is irrelevant.
+
+This works literally the same way as Iterated Addition 1. To reiterate, for each line, consider the sequence where the first number is 1, the second number is the first number before the arrow, and each number in the sequence is the sum of the previous two, and index into this sequence by the second number before the arrow. The result will be the number after the arrow. This is shown for each line below:
+
+0 2: sequence (starting with the zeroth number) is 1 1 0 1 1 2 3 5 8 13..., number in position 2 is 0
+0 3: sequence (starting with the zeroth number) is 1 1 0 1 1 2 3 5 8 13..., number in position 3 is 1
+0 6: sequence (starting with the zeroth number) is 1 1 0 1 1 2 3 5 8 13..., number in position 6 is 3
+1 1: sequence (starting with the zeroth number) is 0 1 1 2 3 5 8 13 21 34..., number in position 1 is 1
+1 8: sequence (starting with the zeroth number) is 0 1 1 2 3 5 8 13 21 34..., number in position 8 is 21
+2 7: sequence (starting with the zeroth number) is 1 1 2 3 5 8 13 21 34 55..., number in position 7 is 21
+3 8: sequence (starting with the zeroth number) is 2 1 3 4 7 11 18 29 47 76..., number in position 8 is 47
+
+Answer: 47
+
+Answer to the metapuzzle: Our answers are currently 29, 8, 7, 3, 4.5, ?, ?, 10, 47. We haven't yet used the mysterious category and number attached to each puzzle. These categories and numbers are metal 2, space 1, gas 1, space 1, space 1, double space 1, double space 2, gas 1, meta 1. If we use the "space" answers as Solar System planet numbers (considering Ceres as planet 4.5) and the "gas"/"metal" answers as element numbers (noting that the elements we get are always gasses or metals, and which is determined by whether the corresponding category is "gas" or "metal"), and take, from the start, the number of letters corresponding to the mysterious number (which is always 1 or 2), we get:
+
+29, copper, co
+8, Neptune, n
+7, nitrogen, n
+3, Earth, e (somewhat thematic given the puzzle, perhaps coincidentally)
+4.5, Ceres, c
+?
+?
+10, neon, n
+47, silver, s
+
+Noting that there are three (1 + 2) missing letters, we would likely already at this point determine the answer to be "connections", as one might expect from the title, "Putting Together", and that the missing letters are t + io.
+
+Now we try to figure out how the missing letters are t + io. We note (or we don't note because this is extremely unfair, but we're intended to note) that the second words of the five lines between angle brackets have as their initials JSUNX, which are the same as the initials of the outer planets, which have planet numbers equal to the numbers heading those lines. Planet 9, or Planet X, was at the time not found yet, but someone gave it a (probably over-precise) 68.3% chance of being found. At this point we have to (also extremely unfairly) somehow figure out that "double space" means the moon at a certain position (starting from the innermost) of a Solar System planet at a certain position. Note that "lunacy" is a small hint to this, though not a very good one. This leaves only four options (not counting Planet X): Io (moon 5 of Jupiter), Pandora (moon 6 of Saturn), Portia (moon 7 of Uranus), and Triton (moon 8 of Neptune) Pandora and Portia are the only two of these that are alliterative, so they must be the two "unused options" mentioned on the line in the angle brackets headed with 6. One might say, "Maybe the names of the numbers are alliterative", but 6 and 7 are also the only two of 5, 6, 7, and 8 that are alliterative (I'm fairly sure this is a coincidence). I and O are contained in Triton in that order (though not consecutively), so "the second correct answer is in the first" means that Io is the second correct answer and Triton is the first. There's no way I can see to interpret "the second correct answer is in the first" as a reference to 5 and 8, except, via a huge stretch, as 5 being less than 8, which gives the same result. The extraction mechanism has us extract t from Triton and io from Io, as desired. So the missing puzzle answers are 8 (giving Triton and t) and 5 (giving Io and io) respectively.
+
+Answer: connections

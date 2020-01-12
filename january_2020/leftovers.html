@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Leftovers</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../scripts_etc/style.css"/>
+    <script src="../scripts_etc/bcrypt.min.js"></script>
+    <script src="../scripts_etc/check_answer.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <div class="header">
+      Answer to Leftovers: <input id="answer" type="text"/><input type="submit" onclick="checkAnswer(0, 5)" value="Check"/> <span id="check-answer-result"/>
+    </div>
+    <h2>Leftovers</h2>
+    <p class="flavortext">In trying to recover the puzzles, I've tried a lot of completely different things, but it seems like all of them were completely wrong.</p>
+    <ul>
+      <li>A: <span style="position: relative;"><audio controls>
+        <source src="resources/leftovers_a.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></span></li>
+      <li>C: <span style="position: relative; top: 1.3ex;"><audio controls>
+        <source src="resources/leftovers_c.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></span></li>
+      <li>D: <span style="position: relative;"><audio controls>
+        <source src="resources/leftovers_d.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></span></li>
+      <li>E: <span style="position: relative;"><audio controls>
+        <source src="leftovers_e.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></span></li>
+      <li>F: <span style="position: relative;"><audio controls>
+        <source src="resources/leftovers_f.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></span></li>
+      <li>G: <span style="position: relative;"><audio controls>
+        <source src="resources/leftovers_g.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio></span></li>
+    </ul>
+    <p>Answer: <span style="font-family: monospace;">_ _ _ _ _ _ _ _</span></p>
+    <script>
+    // This code is not a puzzle. It does vertical alignment of the audio files
+    // so that they're centered in their lines. If you have JavaScript off, the puzzle
+    // is still solvable just as easily; it's just somewhat visually uglier.
+    window.onload = function () {
+      let audioElements = document.getElementsByTagName('audio');
+      for (let i = 0; i < audioElements.length; i++) {
+        audioElements[i].parentNode.style.top = (audioElements[i].clientHeight - 12) / 2 + 'px';
+      }
+    }
+    </script>
+  </body>
+</html>

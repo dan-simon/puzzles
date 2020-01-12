@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Every Word Is Three Letters: Solution</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../scripts_etc/style.css"/>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Every Word Is Three Letters: Solution</h2>
+    <a href="../every_word_is_three_letters.html">(back to puzzle)</a>
+    <p>The first step is to solve the clues. For ease of solving, the answers are in alphabetical order.</p>
+    <ul>
+      <li>28-30 = Latin name for the order with cats and dogs (9) (carnivora)</li>
+      <li>19-21 = Gently trying to influence (7) (coaxing)</li>
+      <li>16-18 = Me, of this puzzle (7) (creator)</li>
+      <li>1-3 = Insect or game (7) (cricket)</li>
+      <li>43-45 = One who rides a cycle (7) (cyclist)</li>
+      <li>34-36 = Person charged with a crime (9) (defendant)</li>
+      <li>13-15 = Number of US states (5) (fifty)</li>
+      <li>40-42 = Bee homes (5) (hives)</li>
+      <li>31-33 = The quality of being impossible to defend (15) (indefensibility)</li>
+      <li>37-39 = To make with machinery, or to make up (11) (manufacture)</li>
+      <li>10-12 = Type of linen cloth, from Latin for "hand towel" (11) (manutergium) (don't look at me like that, it has far more hits than babewynery and it isn't even the puzzle answer)</li>
+      <li>7-9 = To come up with a new name or logo for (7) (rebrand)</li>
+      <li>22-24 = Element with second-highest boiling point, after tungsten (7) (rhenium)</li>
+      <li>4-6 = To move stealthily, or to stay out of sight (5) (skulk)</li>
+      <li>25-27 = Day before today (9) (yesterday)</li>
+    </ul>
+    <p>The second step is to figure out what the general idea of this puzzle is. The last line uses permutation group notation. Indeed, it creates a correspondence between letters and two-cycles (as clued by "every single letter swaps things"). We can use this correspondence to turn any string of letters into a permutation. As confirmation, as suggested by the flavortext, "every word", "drawn", and "tornado" are all the same permutation. Note that whether when composing permutations, the right permutation is first (the usual convention) or last shouldn't matter, as long as it's consistent (making the other choice corresponds to taking the inverse of all group elements).</p>
+    <p>We can turn each of the answer words into a permutation. All these permutations are odd (due to the words all having odd length), and in fact they're all either a four-cycle or a two-cycle times a three-cycle. The aha here, as clued by the title and by the range of three numbers on the left-hand side of each clue, is that each of these permutations can also be derived from three letters. We can put these three letters each in three positions (those given on the left of a 45-letter clue phrase). There are multiple choices for each set of three letters, but using the bottom enumeration (which can be determined to be an enumeration for the hint since it sums to 45) and assuming every word in the hint is a word (using a combination of two wordlists), we have 48 possibilities. These are all of the form "bkt/keb/the study of this teda/tody/toed/type fo/of algebraic structure (five lis/six)", and the only one that makes sense is "the study of this type of algebraic structure (five six)". For reference, the relevant permutation equalities are:</p>
+    <ul>
+      <li>the = cricket</li>
+      <li>stu = skulk</li>
+      <li>dyo = rebrand</li>
+      <li>fth = manutergium</li>
+      <li>ist = fifty</li>
+      <li>ype = creator</li>
+      <li>ofa = coaxing</li>
+      <li>lge = rhenium</li>
+      <li>bra = yesterday</li>
+      <li>ics = carnivora</li>
+      <li>tru = indefensibility</li>
+      <li>ctu = defendant</li>
+      <li>ref = manufacture</li>
+      <li>ive = hives</li>
+      <li>six = cyclist</li>
+    </ul>
+    <p>This clue phrase has a clear answer (given the (5, 6) enumeration, so that we're not tempted to add "permutation" to the front or something).<p/>
+    <p>Answer: group theory</p>
+    <p>Note: This puzzle is relatively hard. You'll probably get the aha immediately if you know group theory but might have trouble with it otherwise, some of the clues aren't obvious (though some others are extremely obvious), figuring out the permutation corresponding to each clue answer is gruntwork which it's easy to make mistakes in if you do it by hand, and figuring out the 45-letter clue phrase is also hard to do by hand. Hopefully if anyone had a lot of trouble with this puzzle they were able to solve the meta without it.</p>
+  </body>
+</html>

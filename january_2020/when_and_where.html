@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <title>When and Where</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../scripts_etc/style.css"/>
+    <script src="../scripts_etc/bcrypt.min.js"></script>
+    <script src="../scripts_etc/check_answer.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <div class="header">
+      Answer to When and Where: <input id="answer" type="text"/><input type="submit" onclick="checkAnswer(0, 9)" value="Check"/> <span id="check-answer-result"/>
+    </div>
+    <h2>When and Where</h2>
+    <p class="flavortext">This puzzle seems to take far too long to solve. Presumably words will show up in the grid at some point, but how many billions of steps will that take? And where will they appear?</p>
+    <p>Note: In this puzzle, looking at the HTML and JavaScript source helps in a data extraction step that is possible but far more tedious otherwise.</p>
+    <noscript><p>This puzzle does not work properly with JavaScript disabled.</p></noscript>
+    <p>Grid <span id="num">0</span>:</p>
+    <table class="grid">
+      <tr>
+        <td id="11">A</td>
+        <td id="12">B</td>
+        <td id="13">C</td>
+        <td id="14">D</td>
+        <td id="15">E</td>
+      </tr>
+      <tr>
+        <td id="21">F</td>
+        <td id="22">G</td>
+        <td id="23">H</td>
+        <td id="24">I</td>
+        <td id="25">J</td>
+      </tr>
+      <tr>
+        <td id="31">K</td>
+        <td id="32">L</td>
+        <td id="33">M</td>
+        <td id="34">N</td>
+        <td id="35">O</td>
+      </tr>
+      <tr>
+        <td id="41">P</td>
+        <td id="42">Q</td>
+        <td id="43">R</td>
+        <td id="44">S</td>
+        <td id="45">T</td>
+      </tr>
+      <tr>
+        <td id="51">U</td>
+        <td id="52">V</td>
+        <td id="53">W</td>
+        <td id="54">X</td>
+        <td id="55">Y</td>
+      </tr>
+    </table>
+    <p>Answer: <span style="font-family: monospace;">_ _ _ _ _ _ _</span></p>
+    <script>
+    let l = [
+      ['ARMBQNFITCYKEJGSDLHOWPZ', 'BCLTXOJUSAQEVZYKNIH', 'CQMTHBKRWOIFZLDSE', 'DPBHVRQWUTSNO', 'ELXABJZCFHY'],
+      ['FUSBTCIOERDMYZVQJGA', 'GCZVRSBXTQUNHKPADMOLYEF', 'HDWGEQBTUZFRACVXKLP', 'IVSOMZPCXUFILHQTJ', 'JKDBFSIMRPLTY'],
+      ['KOACIFWDJLMSBGHZN', 'LFRXDPJSOKYWGBQHIZA', 'MAEWQPJXSVYATUHCOKZLNGR', 'NGPHEJXWABIQMSTDVYC', 'OHSVFILEYGJEBCTMW'],
+      ['PIXTGDVNQKBFO', 'QFJDVUCKPWZYHGOST', 'RYVESWIZOKPMJCADXGB', 'SBDHZVKPIJGATRFMCONQUEX', 'TAJFSNVMLBPDIUEKXOR'],
+      ['UYXSEAGFZOD', 'VEAGRITBDUOLP', 'WQBEDGRYSILZFTOKV', 'XBGMENIQHKWCATZLSYR', 'YTHKOZIJGMSLNWFDRXCQBUE']
+    ];
+    function f() {
+      document.getElementById('num').innerHTML = 1 + +document.getElementById('num').innerHTML;
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= 5; j++) {
+          let entry = l[i - 1][j - 1];
+          document.getElementById(i + '' + j).innerHTML = entry[(entry.indexOf(document.getElementById(i + '' + j).innerHTML) + 1) % entry.length];
+        }
+      }
+    }
+    window.onload = function () {
+      setInterval(f, 5000);
+    }
+    </script>
+  </body>
+</html>
