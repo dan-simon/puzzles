@@ -53,10 +53,6 @@ ul.with-header:before{
   background-color: black;
 }
 
-.hint {
-  background-color: black;
-}
-
 .hint:active {
   background-color: transparent;
 }
