@@ -48,3 +48,15 @@ ul.with-header:before{
   font-weight:bold;
   margin-left: -20px;
 }
+
+.hint {
+  background-color: black;
+}
+
+.hint {
+  background-color: black;
+}
+
+.hint:active {
+  background-color: transparent;
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>When and Where: Hints</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../scripts_etc/style.css"/>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>When and Where: Hints</h2>
+    <a href="../when_and_where.html">(back to puzzle)</a>
+    <ul>
+      <li><span class="hint">The grid of letters in this puzzle changes every five seconds (and the number above the grid increments as the grid changes). In the rest of these hints, a step will refer to this grid change, so "one step later" will mean "after the grid changes once".</span></li>
+      <li><span class="hint">If you reload the page, the grid of letters starts and changes in the exact same way, suggesting that it's not random.</span></li>
+      <li><span class="hint">Try to figure out how the grid of letters changes, either by looking at the grid or by reading the JavaScript. Both methods work.</span></li>
+      <li><span class="hint">In theory, five minutes of staring at the grid is more than enough to get all the needed information. (In practice it will probably take longer due to transcription rates.)</span></li>
+      <li><span class="hint">If you're having trouble transcribing the data or finding a pattern, consider one cell of the grid at a time. The next hint will explain roughly how the grid of letters changes.</span></li>
+      <li><span class="hint">Each cell changes with some period. That is, for any cell c, there's an x (not that large) such that the value of cell c at some step is always the same as the value of cell c x steps later.</span></li>
+      <li>This hint slightly clues an aha moment. <span class="hint">Consider the flavortext.</span></li>
+      <li>This hint clues an aha moment. <span class="hint">Specifically, consider "Presumably words will show up in the grid at some point, but how many billions of steps will that take?"</span></li>
+      <li>This hint gives away an aha moment. <span class="hint">What does the grid look like after billions of steps? Having figured out how the cells change, you should now be able to use not-that-difficult algebra to figure this out.</span></li>
+      <li><span class="hint">There are a lot of possibilities for billions of steps.</span></li>
+      <li><span class="hint">Let's restrict attention to positive integers times one billion, that is, one billion, two billion, three billion, etc.</span></li>
+      <li><span class="hint">As clued by the flavortext, do you notice any words in the grid at any of those times?</span></li>
+      <li><span class="hint">Are there any times at which there seem to be especially long (given the constraints of the grid) words that you wouldn't expect to randomly occur at a given time?</span></li>
+      <li><span class="hint">Are there any times at which there are multiple such words? The next hint will give away the answers to the above few questions.</span></li>
+      <li><span class="hint">From one billion to eighteen billion, there are five numbers of steps that are multiples of a billion at which there's both a five-letter left-to-right horizontal word and a five-letter top-to-bottom vertical word. At other multiples of a billion, even expanding the range to between one billion and a hundred billion, there are no five-letter left-to-right horizontal words or five-letter top-to-bottom vertical words at all.</span></li>
+      <li>This hint very slightly clues an aha moment <span class="hint">There are several important things we can get from each of these numbers of steps that's a multiple of a billion with two five-letter words.</span></li>
+      <li>This hint slightly clues an aha moment. <span class="hint">Specifically, there are three things that turn out to be important. The flavortext clues one of them very directly and sort of clues the other two. The next hint will say what they are.</span></li>
+      <li>This hint clues an aha moment. <span class="hint">The three things that turn out to be important are the step number (clued directly by the flavortext), the location of the intersection of the two words (sort of clued by the flavortext saying "where will they appear"), and the letter at the intersection of the two words (also sort of clued by the flavortext saying "where will they appear").</span></li>
+      <li>This hint doesn't clue an aha moment (but of course it shouldn't be read without all the previous hints). <span class="hint">The letter at the intersection of the two words ranges from A to E, with each appearing once.</span></li>
+      <li>This hint also doesn't clue an aha moment. <span class="hint">How does this suggest we can use that letter?</span></li>
+      <li>This hint also doesn't clue an aha moment. <span class="hint">We can use that letter to order our five grids. This also gives an ordering of the step numbers and the intersection locations.</span></li>
+      <li>This hint clues an aha moment (the same one as above). <span class="hint">The step numbers are all multiples of a billion from one billion to eighteen billion.</span></li>
+      <li>This hint strongly clues part of an aha moment. <span class="hint">We can divide all the step numbers by a billion (making them all between one and eighteen), but then what?</span></li>
+      <li>This hint gives away part of an aha moment. <span class="hint">Now we can convert them to letters via A=1, Z=26.</span></li>
+      <li>This hint clues an aha moment. <span class="hint">What can we do with the intersection locations?</span></li>
+      <li>This hint strongly clues part of an aha moment. <span class="hint">Can we get a letter from each of those as well?</span></li>
+      <li>This hint very strongly clues part of an aha moment. <span class="hint">Grid 0 looked very regular, and we haven't used it yet.</span></li>
+      <li>This hint gives away part of an aha moment. <span class="hint">We can convert the intersection locations to letters by using the letters at those locations in Grid 0.</span></li>
+      <li><span class="hint">We now have two ordered lists of letters.</span></li>
+      <li><span class="hint">Neither seems to form a word or phrase, though.</span></li>
+      <li><span class="hint">Can we combine them in some way?</span></li>
+      <li><span class="hint">One natural way to combine them (which turns out to be correct) is to alternate between them. That is, take the first letter of one, the first letter of the other, the second letter of the first one, the second letter of the other, the third letter of the first one, and so on.</span></li>
+      <li><span class="hint">Which should come first? (There are two possibilities so checking both possibilities works. The next few hints are about which one to choose, which isn't really necessary.)</span></li>
+      <li><span class="hint">Why is the puzzle titled "When and Where"?</span></li>
+      <li><span class="hint">Why not "Where and When?"</span></li>
+      <li><span class="hint">Given the puzzle's title, and the fact that the flavortext asks about time before it asks about location, the letters from step numbers should come first and the letters from intersection locations should come second.</span></li>
+      <li><span class="hint">The above leads to a clue for the answer.</span></li>
+      <li><span class="hint">The answer has seven letters, as clued by the seven blanks.</span></li>
+      <li><span class="hint">The answer isn't "reality". I didn't notice that someone might think that was the answer and apologize for the possibility of confusion. It's certainly a reasonable guess which is roughly as good an answer to the clue as the actual answer.</span></li>
+      <li><span class="hint">The clue works as a regular clue, but it works somewhat better, and is far less ambiguous, as a cryptic clue.</span></li>
+      <li><span class="hint">Specifically, it works as a double definition (two definitions for the same word).</span></li>
+    </ul>
+  </body>
+</html>
