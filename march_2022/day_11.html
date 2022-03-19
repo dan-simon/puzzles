@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Connect the Dots</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="bcrypt.min.js"></script>
+    <script src="check_answer.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Connect the Dots (Day 11, "dots")</h2>
+    <span>Enter your answer here: <input id="answer-11" type="text"/><input type="submit" onclick="checkAnswer('11')" value="Check"/> <span id="check-answer-result-11"></span></span>
+    <br/>
+    <br/>
+    <svg width="350" height="250">
+      <circle cx="25" cy="25" r="5"></circle>
+      <text x="30" y="40">1</text>
+      <circle cx="75" cy="25" r="5"></circle>
+      <text x="80" y="40">2</text>
+      <circle cx="125" cy="25" r="5"></circle>
+      <text x="130" y="40">3</text>
+      <circle cx="175" cy="25" r="5"></circle>
+      <text x="180" y="40">4</text>
+      <circle cx="225" cy="25" r="5"></circle>
+      <text x="230" y="40">5</text>
+      <circle cx="275" cy="25" r="5"></circle>
+      <text x="280" y="40">6</text>
+      <circle cx="325" cy="25" r="5"></circle>
+      <text x="330" y="40">7</text>
+      <circle cx="25" cy="75" r="5"></circle>
+      <text x="30" y="90">8</text>
+      <circle cx="75" cy="75" r="5"></circle>
+      <text x="80" y="90">9</text>
+      <circle cx="125" cy="75" r="5"></circle>
+      <text x="130" y="90">10</text>
+      <circle cx="175" cy="75" r="5"></circle>
+      <text x="180" y="90">11</text>
+      <circle cx="225" cy="75" r="5"></circle>
+      <text x="230" y="90">12</text>
+      <circle cx="275" cy="75" r="5"></circle>
+      <text x="280" y="90">13</text>
+      <circle cx="325" cy="75" r="5"></circle>
+      <text x="330" y="90">14</text>
+      <circle cx="25" cy="125" r="5"></circle>
+      <text x="30" y="140">15</text>
+      <circle cx="75" cy="125" r="5"></circle>
+      <text x="80" y="140">16</text>
+      <circle cx="125" cy="125" r="5"></circle>
+      <text x="130" y="140">17</text>
+      <circle cx="175" cy="125" r="5"></circle>
+      <text x="180" y="140">18</text>
+      <circle cx="225" cy="125" r="5"></circle>
+      <text x="230" y="140">19</text>
+      <circle cx="275" cy="125" r="5"></circle>
+      <text x="280" y="140">20</text>
+      <circle cx="325" cy="125" r="5"></circle>
+      <text x="330" y="140">21</text>
+      <circle cx="25" cy="175" r="5"></circle>
+      <text x="30" y="190">22</text>
+      <circle cx="75" cy="175" r="5"></circle>
+      <text x="80" y="190">23</text>
+      <circle cx="125" cy="175" r="5"></circle>
+      <text x="130" y="190">24</text>
+      <circle cx="175" cy="175" r="5"></circle>
+      <text x="180" y="190">25</text>
+      <circle cx="225" cy="175" r="5"></circle>
+      <text x="230" y="190">26</text>
+      <circle cx="275" cy="175" r="5"></circle>
+      <text x="280" y="190">27</text>
+      <circle cx="325" cy="175" r="5"></circle>
+      <text x="330" y="190">28</text>
+      <circle cx="25" cy="225" r="5"></circle>
+      <text x="30" y="240">29</text>
+      <circle cx="75" cy="225" r="5"></circle>
+      <text x="80" y="240">30</text>
+      <circle cx="125" cy="225" r="5"></circle>
+      <text x="130" y="240">31</text>
+      <circle cx="175" cy="225" r="5"></circle>
+      <text x="180" y="240">32</text>
+      <circle cx="225" cy="225" r="5"></circle>
+      <text x="230" y="240">33</text>
+      <circle cx="275" cy="225" r="5"></circle>
+      <text x="280" y="240">34</text>
+      <circle cx="325" cy="225" r="5"></circle>
+      <text x="330" y="240">35</text>
+    </svg>
+    <ul>
+      <li>19. It helps catch fish, a bit oddly</li>
+      <li>12. Party is part of ABBA show</li>
+      <li>3. Start of hollering after bat's immersion in water</li>
+      <li>1. Each of a pair in Viterbo theater</li>
+      <li>7. Half of brioches' zest</li>
+      <li>6. No odds of fierce bombardment</li>
+      <li>5. Iron surrounding square, or slightly more</li>
+      <li>13. For old neverending trick</li>
+      <li>11. Horrible goose, perhaps, heard</li>
+      <li>8. Last of our number</li>
+      <li>21. Heartless gambit? Way to go!</li>
+      <li>26. Initially graze ember, leading to wound</li>
+      <li>24. Initially great old metal</li>
+      <li>32. Wonderful oobleck, drippy at first</li>
+      <li>31. Wow, go be quiet!</li>
+      <li>29. In Chicago, the person in a certain subculture</li>
+      <li>30. Endless dirt is uninviting</li>
+      <li>35. Courage is part of integrity</li>
+      <li>18. High or low density, at first, for cargo area</li>
+      <li>10. Reported entire depression</li>
+      <li>9. Reverse evil and survive</li>
+      <li>28. Research removing function for stories</li>
+      <li>17. Zero happy emotion</li>
+      <li>23. Left coastal city</li>
+      <li>20. Unusual oars move through air</li>
+      <li>4. Only GE?</li>
+      <li>15. Major 2021 album's very old city</li>
+      <li>27. European country without one bridge</li>
+      <li>25. Small joke is twisted</li>
+      <li>22. Endlessly reject Texas athlete</li>
+      <li>34. Broke store without initial stock</li>
+      <li>33. Young child has right to trespass, perhaps</li>
+      <li>16. First take edge, to remove edge</li>
+      <li>2. Strange riot for some fairytale bears, for example</li>
+      <li>14. Weird, weird, endless string</li>
+    </ul>
+  </body>
+</html>

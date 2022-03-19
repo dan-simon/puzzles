@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>When to Enter</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="bcrypt.min.js"></script>
+    <script src="check_answer.js"></script>
+    <script src="interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>When to Enter (Day 4, "lock")</h2>
+    <span>Enter your answer here: <input id="answer-4" type="text"/><input type="submit" onclick="checkAnswer('4')" value="Check"/> <span id="check-answer-result-4"></span></span>
+    <br/>
+    <br/>
+    <div id="main" style="padding: 5px; border: 1px solid;">
+    </div>
+    <br/>
+    <div id="other">
+    </div>
+    <span>> <input id="command" type="text"/><input type="submit" onclick="applyCommand4()" value="Do it"/></span>
+    <br/>
+    <span>Your goal is to unlock all the locks as quickly as possible. Type "wait [number]" to wait that number of minutes, "use [key name] key" to use that key, "log" to show all your commands so far, "undo" to undo, or "restart" to restart. You can type multiple commands in at once with semicolons separating them.</span>
+  </body>
+</html>

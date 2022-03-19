@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Translations</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="bcrypt.min.js"></script>
+    <script src="check_answer.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Translations (Day 7, "translate")</h2>
+    <span>Enter your answer here: <input id="answer-7" type="text"/><input type="submit" onclick="checkAnswer('7')" value="Check"/> <span id="check-answer-result-7"></span></span>
+    <br/>
+    <br/>
+    <span class="flavortext">First translate each letter, and then translate each word.</span>
+    <br/>
+    <svg width="350" height="350">
+      <text x="100" y="20" text-anchor="middle" alignment-baseline="central">A</text>
+      <text x="160" y="20" text-anchor="middle" alignment-baseline="central">A</text>
+      <text x="199" y="22" text-anchor="middle" alignment-baseline="central">B</text>
+      <text x="100" y="60" text-anchor="middle" alignment-baseline="central">A</text>
+      <text x="266" y="95" text-anchor="middle" alignment-baseline="central">E</text>
+      <text x="100" y="100" text-anchor="middle" alignment-baseline="central">A</text>
+      <text x="161" y="102" text-anchor="middle" alignment-baseline="central">Z</text>
+      <text x="61" y="110" text-anchor="middle" alignment-baseline="central">T</text>
+      <text x="195" y="128" text-anchor="middle" alignment-baseline="central">I</text>
+      <text x="61" y="130" text-anchor="middle" alignment-baseline="central">U</text>
+      <text x="259" y="130" text-anchor="middle" alignment-baseline="central">G</text>
+      <text x="226" y="135" text-anchor="middle" alignment-baseline="central">E</text>
+      <text x="186" y="175" text-anchor="middle" alignment-baseline="central">E</text>
+      <text x="246" y="175" text-anchor="middle" alignment-baseline="central">E</text>
+      <text x="186" y="185" text-anchor="middle" alignment-baseline="central">J</text>
+      <text x="63" y="189" text-anchor="middle" alignment-baseline="central">Y</text>
+      <text x="45" y="208" text-anchor="middle" alignment-baseline="central">S</text>
+      <text x="65" y="208" text-anchor="middle" alignment-baseline="central">S</text>
+      <text x="179" y="210" text-anchor="middle" alignment-baseline="central">G</text>
+      <text x="279" y="210" text-anchor="middle" alignment-baseline="central">G</text>
+      <text x="186" y="215" text-anchor="middle" alignment-baseline="central">E</text>
+      <text x="226" y="215" text-anchor="middle" alignment-baseline="central">E</text>
+      <text x="160" y="220" text-anchor="middle" alignment-baseline="central">N</text>
+      <text x="61" y="270" text-anchor="middle" alignment-baseline="central">T</text>
+      <text x="141" y="298" text-anchor="middle" alignment-baseline="central">O</text>
+      <text x="140" y="300" text-anchor="middle" alignment-baseline="central">N</text>
+      <text x="114" y="305" text-anchor="middle" alignment-baseline="central">R</text>
+    </svg>
+    <br/>
+    <svg width="200" height="200">
+      <defs>
+        <marker id="arrow" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">
+          <path d="M2,2 L2,11 L10,6 L2,2" style="fill: black;"/>
+        </marker>
+      </defs>
+      <path d="M100,100 L100,20" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L119,22" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L137,29" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L153,40" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L166,55" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L175,72" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L179,90" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L179,110" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L175,128" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L166,145" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L153,160" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L137,171" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L119,178" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L100,180" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L81,178" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L63,171" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L47,160" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L34,145" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L25,128" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L21,110" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L21,90" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L25,72" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L34,55" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L47,40" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L63,29" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+      <path d="M100,100 L81,22" style="stroke: black; fill: none; marker-end: url(#arrow);"/>
+    </svg>
+    <br/>
+    <span>&#127475;&#127473;&#127466;&#127466;&#127467;&#127479;&#127470;&#127481;&#127479;&#127476;&#127481;&#127479;</span>
+  </body>
+</html>
