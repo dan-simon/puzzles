@@ -127,8 +127,10 @@ You win!
 
 let passageData = rawGameData.split('---').map(i => i.replace(/^[ \t\n]+|[ \t\n]+$/g, ''));
 
+let last = x => x[x.length - 1];
+
 window.onload = function () {
-  init(+window.location.href.split('_')[1].split('.')[0]);
+  init(+last(window.location.href.split('/')).split('_')[1].split('.')[0]);
 }
 
 let init = function (x, later) {
