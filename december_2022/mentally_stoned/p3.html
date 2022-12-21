@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 3</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 3</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>The elves successfully solve the windows puzzle, and move on to another building. This one seems to have numbered rooms. A lot of numbered rooms. Before you know it, the elves start exploring the building and end up in all sorts of places. You think they can find their way back, but you're not sure, and anyway, some of them might have found something useful. Best to try to figure out where they all are.</span>
+    <br/>
+    <br/>
+    <span>After a while, you manage to figure out that the elves started in some group of rooms. Then, for some number of <em>steps</em>, some of the elves in Room x went to Room 3x + 1, and, for even x, some of them also went to Room x / 2. (Some just stayed in Room x, though.) After this number of steps, the elves got tired of moving around and stayed where they were. There are enough elves that <em>any room that could have elves with these rules, does have elves</em>. You want to start by figuring out <em>how many rooms have elves</em>.</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were:</span>
+    <pre><code class="multline">2 8 3 5 10 9
+Steps: 10</code></pre>
+    <span>then that would mean elves were initially in rooms 2, 3, 5, 8, 9, and 10, and would take up to 10 steps before getting tired. After one step, elves would be in rooms 1, 2, 3, 4, 5, 7, 8, 9, 10, 16, 25, 28, and 31. After two steps, elves would be in rooms 1, 2, 3, 4, 5, 7, 8, 9, 10, 13, 14, 16, 22, 25, 28, 31, 49, 76, 85, and 94. After 10 steps, elves would be in 439 rooms, with the maximum being 620014. (There seems to be <em>no limit to possible room numbers</em>.) So your output is <code>439</code> rooms.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p3_data.html">get your problem input</a>. You feel that this problem will take 5 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2c">Answer: <input id="answer-2c" type="text"/> <a onclick="checkAnswer('2c')">[Submit]</a> <span id="check-answer-result-2c"></span></span>
+  </body>
+</html>

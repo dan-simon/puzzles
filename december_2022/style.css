@@ -1,0 +1,56 @@
+body {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header a {
+  padding: 0 12px;
+}
+
+.flavortext {
+  font-style: italic;
+}
+
+.box {
+  top: 3px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid black;
+  height: 2ex;
+  width: 0.5em;
+}
+
+.grid {
+  border-collapse: collapse;
+}
+
+.grid td {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.grid td.filled {
+  background-color: black;
+}
+
+ul.with-header:before{
+  content: attr(header-text);
+  font-weight:bold;
+  margin-left: -20px;
+}
+
+.hint {
+  background-color: black;
+}
+
+.hint:active {
+  background-color: transparent;
+}

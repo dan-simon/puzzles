@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 2</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 2</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>As it turns out, after a few hours, the elves started to realize themselves that there were other more important things they should be doing than holding parties, so fortunately you didn't have to stop all the parties yourself. They've mostly gone to a building with a grid of windows, and they apparently think the windows of the building are a puzzle of some sort?</span>
+    <br/>
+    <br/>
+    <span>The elves have written down which windows are lit, representing an unlit window by <code>.</code> and a lit window by <code>#</code>; they want you to look at which floors have <em>no lit windows</em>, and convert the result <em>from binary, reading from top to bottom</em> (no lit windows = 1, any lit windows = 0).</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were:</span>
+    <pre><code class="multline">...#.
+.....
+#...#
+.####
+#....
+..##.
+#..#.
+...#.
+.....
+..#..
+....#
+.#...
+.....</code></pre>
+    <span>then the binary you'd get would be 100000010001, giving you the output <code>2065</code>.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p2_data.html">get your problem input</a>. You feel that this problem will take 4 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2b">Answer: <input id="answer-2b" type="text"/> <a onclick="checkAnswer('2b')">[Submit]</a> <span id="check-answer-result-2b"></span></span>
+  </body>
+</html>

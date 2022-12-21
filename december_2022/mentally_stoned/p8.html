@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 8</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 8</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>You were able to find the password for the computer clusters. However, unfortunately, there's nothing useful stored on them. You thus go into the tunnels, hoping that somehow you'll be able to get an extra star.</span>
+    <br/>
+    <br/>
+    <span>Like the rest of this campus, the tunnels feel emptier than they should be; you feel like something should be stopping you from just going from place to place, but there's nothing doing that. You do, however, see some graffiti on the walls.</span>
+    <br/>
+    <br/>
+    <span>The graffiti is divided into groups of lines each of which has a number under it. You think this looks suspicious, so you ask an elf about it. They agree it's suspicious, and in fact they think it's a puzzle. All the elves seem excited about this. They start frantically scribbling stuff down.</span>
+    <br/>
+    <br/>
+    <span>Soon, the elves point out to you that every group of lines has a different number of lines, and furthermore, that the number of lines in each group is the same as the number of digits of some number below a different group. They thus propose that this is a cipher where <em>the first letters of each group of lines correspond to the digits of some number, in order</em>. (You ask "Why first letters?" They say "It's always first letters." Presumably this is some sort of puzzle wisdom.) It does seem like <em>there might be more than one letter corresponding to each number</em>.</span>
+    <br/>
+    <br/>
+    <span>While this is being explained to you, one of the elves finds a group of lines without a number below it. All the elves again get very excited. They say that this is probably the group to "extract from", whatever that means, "and then we can use <a href="https://www.quinapalus.com/cgi-bin/qat"  target="_blank">Qat</a> or something to get an answer." The elves seem to want you to figure out <em>the number corresponding to the last group of lines, using the same cipher as for the other groups</em>.</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were:</span>
+    <pre><code class="multiline">xffl^.ke2t6NK&lt;~6R8x9
+/K{lWpe?H_2,
+!lVgCaZK`l`a,qO?5^
+ClY*Nyxl2@KgJb^+pB=+
+|`H-W*BS4g:Eb1X9`
+j{:CV8dH&gt;`,
+|'o)r^k-X;lnwsws|t
+1545848166
+
+?8\TQ%h8rIE%Cx!RZ!]N
+"J~.I(#P^BswZIAzT
+R$yOmcelYh,
+x#(D"_(|Q{C&gt;Z
+anB(n,wj2/3B13
+*\edr'[?`RS_
+%B;!6WN4pWD#abD
+"wB;aFb?/e_)Ap7
+651231451
+
+q}QJQanZc[a7P3`
+IV)t2"0""1ptEPpe^
+6kq)))DI~v_]@W
+;g+}]BWLrO&lt;\.{gtOve
+fJQ"r7%p6*3
+MO"Tivv8#T2WN9|jCU&lt;
+%&gt;2UDL'f&gt;N,~3@E}i
+IX`5k{)oeu7%
+rPVR0Og1Xu6QZ/]#y
+7039939
+
+Rq8&lt;cP0he[lRKOOYjr
+?(5;5q1Z.6m
+TXrBll{[?4\t*i
+I]}#wOLn17A)wV@$~XV
+'Y3{jS2f[GZltL
+m60^9I"UN:J#Tc1LpH
+d&gt;uV0-^B3/1.WE
+@1sM#?U]hQp-UzQ
+::P,ctLa#:}j
+X0x,1kMgGzV
+50171740
+
+x=N'^vogq=^=wr-.d1[
+%VfvJ"8/?&amp;[4A
+|d|]EeFqp$'y7(LsGMlA
+?m&gt;^H7Wgsmg
+ITcS5dGB3r+q[cievcs{</code></pre>
+    <span>then x, being the start of the first line of the 7-line group of lines and also the start of the fourth line of the 8-line group of lines, corresponds in the cipher to the first digit of the 7-digit number (7039939) and the fourth digit of the 8-digit number (50171740), both of which are 7. Repeating this for each of %, |, ?, and I, we see that % is 4, | is 9, ? is 5, and I is also 5, leading to an output of <code>74955</code>.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p8_data.html">get your problem input</a>. You feel that this problem will take 13 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2h">Answer: <input id="answer-2h" type="text"/> <a onclick="checkAnswer('2h')">[Submit]</a> <span id="check-answer-result-2h"></span></span>
+  </body>
+</html>

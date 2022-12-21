@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 5</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 5</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>You realize the elves are going to take way too long to deliver all the eggs, so you try to speed it up by getting multiple elves to delivering eggs at once and trying to ensure the ones delivering aren't drunk. Soon enough, the elves have had their eggnog and you continue exploring. You somehow find yourself in ... space, apparently? You have some hope that you've somehow gotten back to your universe accidentally, but upon further investigation, it seems not.</span>
+    <br/>
+    <br/>
+    <span>Even more worrying than you having finally found yourself in space is that the elves seem gone. After looking around frantically, you somehow accidentally trigger a machine lying around, and notice that you seem ... slightly smaller? Not much smaller, though.</span>
+    <br/>
+    <br/>
+    <span>You eventually see a piece of paper that confirms that you've shrunk. It seems that this place has a bunch of machines that can change what size someone is. Apparently, to calibrate size, the standard technique here is to look at some sort of "nano-ruler", which has evenly spaced numbers, like a normal ruler, but counts up differently. Rather than just counting up, it counts from 0 to 0, then 0 to 1, then 0 to 2, then 0 to 3, etc. So the numbers on a nano-ruler are 0, 0, 1, 0, 1, 2, 0, 1, 2, 3, 0, etc., rather than 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, etc. as with a normal ruler.</span>
+    <br/>
+    <br/>
+    <span>At about this point, you notice some numbers in the dust that you don't think were there before. You think perhaps the elves shrunk down to a <em>far</em> smaller size, and drew a nano-ruler in the dust. However, the numbers seem way too big for a nano-ruler. At first you think that the elves who were drunk from the eggnog were put in charge of the nano-ruler, too, but soon you have another idea: perhaps the nano-ruler is so small compared to you, <em>you can only see every yth number on it for some y</em> (the 0 looks especially prominant, though, so you're sure <em>the 0 you see is the 0 at the start</em>). If you could <em>figure out y,</em> then perhaps that'd help you and the elves reunite and figure out how to at least get back to the campus rather than this weird space place. (If there are multiple options for what y is, you think you should go with <em>the smallest option</em>.)</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were <code>0 2 6 6 2 7</code>, then you would be seeing every 17th number (the number in position 0 on a nano-ruler is 0, the number in position 17 is 2, the number in position 34 is 6, etc.), so your output would be that y is <code>17</code>.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p5_data.html">get your problem input</a>. You feel that this problem will take 7 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2e">Answer: <input id="answer-2e" type="text"/> <a onclick="checkAnswer('2e')">[Submit]</a> <span id="check-answer-result-2e"></span></span>
+  </body>
+</html>
