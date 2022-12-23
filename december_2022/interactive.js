@@ -254,13 +254,13 @@ let submit = function (x) {
       out.style.textAlign = '';
       out.innerText = norm + ': Number is too large';
     } else if (!valid2.includes(norm)) {
-      out.style.color = 'red';
+      out.style.color = 'orange';
       out.style.textAlign = '';
-      out.innerText = norm + ': Name contains non-letter(s)';
+      out.innerText = norm + ': Number is OK, but name contains non-letter(s)';
     } else if (!(norm in valid3)) {
-      out.style.color = 'red';
+      out.style.color = 'orange';
       out.style.textAlign = '';
-      out.innerText = norm + ': Name is invalid';
+      out.innerText = norm + ': Number is OK, but name is invalid';
     } else if (!(norm in special)) {
       out.style.color = '';
       out.style.textAlign = '';
