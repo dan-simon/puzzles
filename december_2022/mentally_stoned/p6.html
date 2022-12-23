@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 6</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 6</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>You're able to coordinate with the elves to get to the same size and escape space, but you're still on the weird abandoned campus you've been on. You wonder how long it's been; no one brought a clock. You boldly lead the elves into another building, hoping this one has something useful. Once you're inside, the elves start giving you directions; you completely ignore them.</span>
+    <br/>
+    <br/>
+    <span>A few hours later (or so you think; you still don't have a clock), you regret not following the elves' directions. It turns out that the elves who were giving you directions were the ones who had the nano-ruler in the dust idea, not the drunk ones; without their help, you've managed to get yourself and all the elves completely lost in this building. You ask for suggestions. One elf suggests holding another party and hoping for rescue; you quickly determine they're one of the drunk ones. Another elf suggests trying to keep track of where you've been from now on; that sounds like a good idea, so you decide to do it.</span>
+    <br/>
+    <br/>
+    <span>Happily, one of the elves has a compass. (Why they'd have one, given that they live at the north pole, is a bit unclear; maybe they want to keep track of where the magnetic north pole is too?) You're thus able to determine which directions (<code>N</code> = north, <code>E</code> = east, <code>W</code> = west, <code>S</code> = south) you're going from now on; you appoint an elf to keep track of this. Note that <em>in the elf's log of your motion, every letter represents the same distance moved</em>. After a while, you decide to try to figure out <em>how many times you've visited the point (or maybe points) you've visited most</em>.</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were <code>EWEEWENSEEWNNESWWEEWNSWNNSSNNSNWWSSWEWSS</code>, then arbitrarily saying you started at (0, 0) (with the first coordinate being distance south and the second being distance east), you'd go with E to (0, 1), then with W back to (0, 0), then with E to (0, 1), then with E again to (0, 2), then with W to (0, 1), then with E to (0, 2), then with N to (-1, 2), then with S to (0, 2), and so on. You end at (1, -1), having visited 41 locations (counting the start and end), 19 of which are unique. (-1, 3) is the only location you've visited 5 times, and there's no location you've visited more than that, so your output would be <code>5</code>.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p6_data.html">get your problem input</a>. You feel that this problem will take 8 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2f">Answer: <input id="answer-2f" type="text"/> <a onclick="checkAnswer('2f')">[Submit]</a> <span id="check-answer-result-2f"></span></span>
+  </body>
+</html>

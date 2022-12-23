@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 4</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 4</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>You find which rooms the elves are in, find all of the elves (well, the ones that hadn't already found their way back), and leave the building. You then get lost navigating the campus, and end up at what appears to be some sports fields (abandoned, like everywhere else you've encountered), where the elves are apparently trying to deliver 60 eggs to a central point to make eggnog.</span>
+    <br/>
+    <br/>
+    <span>The elves' delivery strategy is not perfect. For one, they seem to be only delivering one egg at once. Also, they seem already to have drunk some of the eggnog; their drunken maneuvering means that the time it'll take to get an egg to the central point, in minutes, is the <em>square</em> of the distance to the central point.</span>
+    <br/>
+    <br/>
+    <span>You make a map that displays the locations of the eggs, with <code>e</code> representing an egg, <code>c</code> representing the central point (which is <em>not guaranteed to be at the center</em>; perhaps the eggnog had something to do with this, too), and <code>.</code> representing nothing. You want to determine <em>how many minutes it will take the elves to deliver all 60 eggs</em>.</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were:</span>
+    <pre><code class="multiline">...e...
+.......
+e...e..
+.......
+.......
+.......
+ec.....</code></pre>
+    <span>then there would be only 4 eggs, and their squared distances to the center point would be 40, 17, 25, and 1, leading to the output of <code>83</code> total minutes.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p4_data.html">get your problem input</a>. You feel that this problem will take 6 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2d">Answer: <input id="answer-2d" type="text"/> <a onclick="checkAnswer('2d')">[Submit]</a> <span id="check-answer-result-2d"></span></span>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mentally Stoned: Problem 7</title>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_1.css"/>
+    <link rel="stylesheet" type="text/css" href="../style_2.css"/>
+    <script src="../bcrypt.min.js"></script>
+    <script src="../check_answer.js"></script>
+    <script src="../interactive.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>Problem 7</h2>
+    <span><a href="../mentally_stoned.html">[Back]</a> <span id="stars" class="star"></span></span>
+    <br/>
+    <br/>
+    <span>You make your way out of the building you got stuck in. Apparently some of the wiser elves suspected this building would be hard to get out of and didn't even go in with you. They've apparently found two other places you can investigate: some computer clusters, and some tunnels under the campus. You're not sure how this is going to lead to you getting enough stars, because that's only two places and so far you've been getting one star per place you've gone, but it seems helpful anyway.</span>
+    <br/>
+    <br/>
+    <span>You first go to the computer clusters. Apparently, you'll need a <em>password</em> to access them. Fortunately, you find <em>a password hint</em> written nearby; it's a list of numbers, though, and you're not sure what it means. Fortunately, some of the elves who found the clusters tell you that from their investigation, <em>the password has at least three digits (i.e., it's at least 100)</em> and <em>each of the password hint numbers, once a digit is removed from it, is a multiple of the password</em>. Also, they say that <em>given this information, there should only be one possible password.</em> You decide to try to <em>find the password</em>.</span>
+    <br/>
+    <br/>
+    <span>For example, if your input were <code>873891 261258 560977 826414</code>, then you could remove a digit from each of these numbers to get 87391 (removing the second 8), 61258 (removing the first 2), 60977 (removing the 5), and either 26414 (removing the 8) or 82614 (removing the first 4), all of which are multiples of 281. You could also get multiples of 3 from all these numbers, but 3 is too small to be the password. So, your output would be that the password is <code>281</code>.</span>
+    <br/>
+    <br/>
+    <span>To begin, <a href="p7_data.html">get your problem input</a>. You feel that this problem will take 9 lines of code.</span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-2g">Answer: <input id="answer-2g" type="text"/> <a onclick="checkAnswer('2g')">[Submit]</a> <span id="check-answer-result-2g"></span></span>
+  </body>
+</html>
