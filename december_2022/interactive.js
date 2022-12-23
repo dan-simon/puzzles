@@ -1,6 +1,8 @@
 // Defined twice so we only need to load one of two files to get it
 window.getProgress = () => JSON.parse(localStorage.getItem('dec-2022-progress')) || {};
 
+let currentState = [];
+
 let checkForStuff = function () {
   let parts = window.location.href.split('/');
   let end = parts[parts.length - 1];
@@ -34,7 +36,191 @@ let checkForStuff = function () {
     if (end.length === 7) {
       document.getElementById('stars').innerText = stars + ' star' + ((stars !== 1) ? 's' : '');
     }
+  } else if (end === 'think_outside_the_box.html') {
+    updateLoadOptions();
+    write(description(currentLocation()));
+    write(miniHelpText)
   }
+}
+
+let miniHelpText = '(Putting "enter X Y" (without the quotes) in the input below this text will put words X and Y into that box, and tell you the output.)';
+let bigHelpText = ['List of commands:', 'enter X Y: puts words X and Y into the box in the current room, and tells you the output', 'forward: goes forward',
+'help: shows this help text', 'in: goes in', 'left: turns left', 'out: goes out', 'right: turns right',
+'Note: You can write any command as its first letter, and you can enter multiple commands at once by separating them by semicolons (;). The features in this note are for convenience and not part of the puzzle.'];
+
+let write = function (x) {
+  let m = document.getElementById('main');
+  if (m.children.length > 0) {
+    m.appendChild(document.createElement('br'));
+  }
+  let s = document.createElement('span');
+  s.innerText = x;
+  m.appendChild(s);
+}
+
+let writeError = function (x) {
+  let m = document.getElementById('main');
+  if (m.children.length > 0) {
+    m.appendChild(document.createElement('br'));
+  }
+  let s = document.createElement('span');
+  s.innerText = x;
+  s.style.color = 'red';
+  m.appendChild(s);
+}
+
+let currentLocation = function () {
+  return currentState.length > 0 ? currentState[currentState.length - 1] : 18;
+}
+
+let description = function (x) {
+  return table5[x];
+}
+
+let getState = () => JSON.parse(localStorage.getItem('dec-2022-state')) || {};
+
+let updateLoadOptions = function () {
+  let select = document.getElementById('load');
+  let v = select.value;
+  while (select.children.length > 0) {
+    select.removeChild(select.children[0]);
+  }
+  let state = getState();
+  let k = Object.keys(state);
+  k.sort();
+  for (let i of k) {
+    let c = document.createElement('option');
+    c.value = i;
+    c.innerText = i;
+    select.appendChild(c);
+  }
+  if (k.includes(v)) {
+    select.value = v;
+  }
+}
+
+let saveState = function () {
+  let state = getState();
+  let val = document.getElementById('save').value;
+  if (!val) {
+    alert('Empty save name!');
+    return;
+  }
+  state[val] = currentState;
+  localStorage.setItem('dec-2022-state', JSON.stringify(state));
+  updateLoadOptions();
+}
+
+let loadState = function () {
+  let state = getState();
+  let val = document.getElementById('load').value;
+  if (!(val in state)) {
+    alert('Loading non-existant save!');
+    return;
+  }
+  currentState = state[val];
+  write('[Loaded save "val"]');
+  write(description(currentLocation()));
+}
+
+let undo = function () {
+  if (currentState.length === 0) {
+    alert('Nothing to undo!');
+    return;
+  }
+  write('[Undone]');
+  write(description(currentLocation()));
+  currentState.pop();
+}
+
+let newLocationMessage = function () {
+  if (different.includes(currentLocation())) {
+    return 'As always when you enter a new room, you get disoriented and end up facing ... hm, directions don\'t seem to make sense here.';
+  } else {
+    return 'As always when you enter a new room, you get disoriented and end up facing in a certain slightly-helpful direction.';
+  }
+}
+
+let move = function (x) {
+  if (x === 'f') {
+    if (different.includes(currentLocation())) {
+      write('Going forward doesn\'t seem to make sense here.');
+      write(description(currentLocation()));
+    } else {
+      write('You go forward.');
+      currentState.push(table1[currentLocation()]);
+      write(newLocationMessage());
+      write(description(currentLocation()));
+    }
+  }
+  if (x === 'h') {
+    for (let i of bigHelpText) {
+      write(i);
+    }
+  }
+  if (x === 'i') {
+    write('You go in.');
+    currentState.push(table4[currentLocation()]);
+    write(newLocationMessage());
+    write(description(currentLocation()));
+  }
+  if (x === 'l') {
+    if (different.includes(currentLocation())) {
+      write('Turning left doesn\'t seem to make sense here.');
+      write(description(currentLocation()));
+    } else {
+      write('You turn left.');
+      currentState.push(table2[currentLocation()]);
+      write(description(currentLocation()));
+    }
+  }
+  if (x === 'o') {
+    write('You go out.');
+    currentState.push(table4[currentLocation()]);
+    write(newLocationMessage());
+    write(description(currentLocation()));
+  }
+  if (x === 'r') {
+    if (different.includes(currentLocation())) {
+      write('Turning right doesn\'t seem to make sense here.');
+      write(description(currentLocation()));
+    } else {
+      write('You turn right.');
+      currentState.push(table3[currentLocation()]);
+      write(description(currentLocation()));
+    }
+  }
+}
+
+let enter = function (x) {
+  let letter = table6[currentLocation()];
+  if (x.length !== 2) {
+    writeError('Not two words');
+    return;
+  }
+  x = x.map(i => i.toUpperCase());
+  if (x.every(i => [...i].filter(j => j === letter).length !== 1)) {
+    writeError('Neither word has uniqueness');
+    return;
+  }
+  if (x.every(i => [...i].filter(j => j === letter).length === 1)) {
+    writeError('Both words have uniqueness');
+    return;
+  }
+  let first;
+  let second;
+  if ([...x[0]].filter(j => j === letter).length === 1) {
+    first = x[0];
+    second = x[1];
+  } else {
+    first = x[1];
+    second = x[0];
+  }
+  if (first.indexOf(letter) >= second.length) {
+    writeError('Word too short');
+    return;
+  }
+  write(second[first.indexOf(letter)]);
 }
 
 let isValidFormat = function (x) {
@@ -119,6 +305,25 @@ let submit = function (x) {
         out.appendChild(c4);
       }
     }
+  } else if (x === '4') {
+    let val = document.getElementById('input-4').value;
+    // Good to clear current command especially in this case.
+    document.getElementById('input-4').value = '';
+    val = val.split(';').map(i => i.split(/\s/g).filter(j => j));
+    for (i of val) {
+      if (i.length > 0) {
+        write('> ' + i.join(' '));
+        let crucial = i[0][0].toLowerCase();
+        if ('fhilor'.includes(crucial)) {
+          move(crucial);
+        } else if (crucial === 'e') {
+          enter(i.slice(1));
+        } else {
+          write('Invalid command. You can use "help" to see possible commands.')
+        }
+        document.getElementById('main').scrollTop = document.getElementById('main').scrollHeight;
+      }
+    }
   }
 }
 
@@ -134,4 +339,16 @@ let valid3 = {'ABA': 'Generation A: #DACBA/ADABCBA', 'ABACA': 'Generation ABA: #
 
 let special = {'BCABA': ['██A█CABA', '█AB█ABA████', ''], 'BDBCBA': ['B██ABA█BA█', '███C███', '❌👁️'], 'CA': ['███CB█CA██', '██████A██████████', ''], 'DABACA': ['██AB██CBA██', '█ ████ █BA███ ██ █ █████ ██████', ''], 'CABDABC': ['██C███CAB', '██B█', '🚩🚩']};
 
+let table1 = [30, 32, 90, 170, 4, 15, 112, 123, 182, 70, 90, 94, 144, 170, 178, 5, 112, 150, 59, 106, 123, 144, 182, 206, 78, 127, 160, 74, 120, 154, 0, 32, 0, 30, 132, 162, 170, 37, 102, 112, 150, 182, 195, 206, 49, 53, 63, 94, 202, 44, 63, 83, 139, 44, 86, 94, 106, 164, 202, 18, 94, 106, 144, 44, 49, 94, 139, 170, 190, 197, 9, 90, 178, 117, 27, 154, 190, 197, 24, 117, 127, 160, 187, 49, 139, 202, 53, 136, 164, 202, 0, 9, 70, 170, 9, 44, 53, 59, 63, 106, 144, 170, 38, 136, 164, 206, 18, 53, 59, 94, 164, 206, 5, 15, 38, 150, 182, 73, 78, 187, 27, 127, 154, 5, 18, 144, 178, 24, 78, 120, 154, 187, 32, 162, 170, 190, 86, 102, 164, 49, 63, 83, 154, 197, 9, 18, 59, 94, 123, 178, 15, 38, 112, 195, 27, 74, 120, 127, 139, 197, 24, 78, 32, 132, 53, 86, 102, 106, 136, 206, 0, 9, 32, 63, 90, 94, 132, 190, 9, 70, 123, 144, 5, 18, 38, 112, 206, 78, 117, 127, 63, 74, 132, 170, 197, 38, 150, 63, 74, 139, 154, 190, 44, 53, 83, 86, 18, 38, 102, 106, 164, 182];
 
+let table2 = [1, 3, 0, 2, 4, 7, 5, 8, 6, 10, 13, 12, 14, 11, 9, 16, 17, 15, 19, 23, 21, 18, 20, 22, 25, 26, 24, 28, 29, 27, 31, 30, 33, 35, 36, 34, 32, 37, 42, 41, 39, 43, 40, 38, 48, 47, 44, 46, 45, 50, 52, 49, 51, 58, 57, 53, 55, 56, 54, 62, 61, 59, 60, 65, 63, 67, 64, 68, 69, 66, 72, 70, 71, 73, 75, 77, 74, 76, 81, 82, 78, 79, 80, 84, 85, 83, 89, 88, 86, 87, 93, 92, 90, 91, 101, 96, 99, 100, 95, 97, 94, 98, 105, 102, 103, 104, 108, 110, 109, 107, 111, 106, 116, 112, 115, 113, 114, 119, 117, 118, 121, 122, 120, 126, 123, 124, 125, 128, 131, 127, 129, 130, 133, 135, 132, 134, 137, 138, 136, 140, 143, 139, 141, 142, 147, 148, 145, 146, 149, 144, 152, 153, 151, 150, 156, 154, 157, 158, 159, 155, 161, 160, 163, 162, 165, 168, 169, 164, 166, 167, 172, 174, 176, 175, 170, 171, 177, 173, 181, 178, 179, 180, 183, 186, 185, 182, 184, 188, 189, 187, 193, 194, 191, 192, 190, 196, 195, 201, 200, 197, 199, 198, 204, 202, 205, 203, 209, 211, 207, 210, 208, 206];
+
+let table3 = [2, 0, 3, 1, 4, 6, 8, 5, 7, 14, 9, 13, 11, 10, 12, 17, 15, 16, 21, 18, 22, 20, 23, 19, 26, 24, 25, 29, 27, 28, 31, 30, 36, 32, 35, 33, 34, 37, 43, 40, 42, 39, 38, 41, 46, 48, 47, 45, 44, 51, 49, 52, 50, 55, 58, 56, 57, 54, 53, 61, 62, 60, 59, 64, 66, 63, 69, 65, 67, 68, 71, 72, 70, 73, 76, 74, 77, 75, 80, 81, 82, 78, 79, 85, 83, 84, 88, 89, 87, 86, 92, 93, 91, 90, 100, 98, 95, 99, 101, 96, 97, 94, 103, 104, 105, 102, 111, 109, 106, 108, 107, 110, 113, 115, 116, 114, 112, 118, 119, 117, 122, 120, 121, 124, 125, 126, 123, 129, 127, 130, 131, 128, 134, 132, 135, 133, 138, 136, 137, 141, 139, 142, 143, 140, 149, 146, 147, 144, 145, 148, 153, 152, 150, 151, 155, 159, 154, 156, 157, 158, 161, 160, 163, 162, 167, 164, 168, 169, 165, 166, 174, 175, 170, 177, 171, 173, 172, 176, 179, 180, 181, 178, 185, 182, 186, 184, 183, 189, 187, 188, 194, 192, 193, 190, 191, 196, 195, 199, 201, 200, 198, 197, 203, 205, 202, 204, 211, 208, 210, 206, 209, 207];
+
+let table4 = [37, 37, 37, 37, 123, 102, 102, 102, 102, 154, 154, 154, 154, 154, 154, 63, 63, 63, 132, 132, 132, 132, 132, 132, 70, 70, 70, 127, 127, 127, 178, 178, 74, 74, 74, 74, 74, 0, 44, 44, 44, 44, 44, 44, 38, 38, 38, 38, 38, 162, 162, 162, 162, 182, 182, 182, 182, 182, 182, 120, 120, 120, 120, 15, 15, 15, 15, 15, 15, 15, 24, 24, 24, 144, 32, 32, 32, 32, 160, 160, 160, 160, 160, 187, 187, 187, 197, 197, 197, 197, 112, 112, 112, 112, 117, 117, 117, 117, 117, 117, 117, 117, 5, 5, 5, 5, 150, 150, 150, 150, 150, 150, 90, 90, 90, 90, 90, 94, 94, 94, 59, 59, 59, 4, 4, 4, 4, 27, 27, 27, 27, 27, 18, 18, 18, 18, 206, 206, 206, 190, 190, 190, 190, 190, 73, 73, 73, 73, 73, 73, 106, 106, 106, 106, 9, 9, 9, 9, 9, 9, 78, 78, 49, 49, 195, 195, 195, 195, 195, 195, 202, 202, 202, 202, 202, 202, 202, 202, 30, 30, 30, 30, 53, 53, 53, 53, 53, 83, 83, 83, 139, 139, 139, 139, 139, 164, 164, 86, 86, 86, 86, 86, 170, 170, 170, 170, 136, 136, 136, 136, 136, 136];
+
+let table5 = ['You are in a square room with a paradoxical box.', 'You are in a square room with a paradoxical box.', 'You are in a square room with a paradoxical box.', 'You are in a square room with a paradoxical box.', 'You are in a paradoxical room with a square box.', 'You are in a square room with a square box.', 'You are in a square room with a square box.', 'You are in a square room with a square box.', 'You are in a square room with a square box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a triangular room with a heptagonal box.', 'You are in a triangular room with a heptagonal box.', 'You are in a triangular room with a heptagonal box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a pentagonal box.', 'You are in a triangular room with a pentagonal box.', 'You are in a triangular room with a pentagonal box.', 'You are in a lens-shaped room with a square box.', 'You are in a lens-shaped room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a paradoxical room with a square box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a square room with a lens-shaped box.', 'You are in a square room with a lens-shaped box.', 'You are in a square room with a lens-shaped box.', 'You are in a square room with a lens-shaped box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a hexagonal room with a pentagonal box.', 'You are in a square room with a triangular box.', 'You are in a square room with a triangular box.', 'You are in a square room with a triangular box.', 'You are in a square room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a heptagonal room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a circular room with a hexagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a pentagonal room with a lens-shaped box.', 'You are in a pentagonal room with a lens-shaped box.', 'You are in a pentagonal room with a lens-shaped box.', 'You are in a pentagonal room with a lens-shaped box.', 'You are in a pentagonal room with a lens-shaped box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in a square room with a pentagonal box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in an octagonal room with a triangular box.', 'You are in a square room with a square box.', 'You are in a square room with a square box.', 'You are in a square room with a square box.', 'You are in a square room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a hexagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a triangular room with an octagonal box.', 'You are in a triangular room with an octagonal box.', 'You are in a triangular room with an octagonal box.', 'You are in a triangular room with a square box.', 'You are in a triangular room with a square box.', 'You are in a triangular room with a square box.', 'You are in a square room with a paradoxical box.', 'You are in a square room with a paradoxical box.', 'You are in a square room with a paradoxical box.', 'You are in a square room with a paradoxical box.', 'You are in a pentagonal room with a triangular box.', 'You are in a pentagonal room with a triangular box.', 'You are in a pentagonal room with a triangular box.', 'You are in a pentagonal room with a triangular box.', 'You are in a pentagonal room with a triangular box.', 'You are in a square room with a hexagonal box.', 'You are in a square room with a hexagonal box.', 'You are in a square room with a hexagonal box.', 'You are in a square room with a hexagonal box.', 'You are in a triangular room with a hexagonal box.', 'You are in a triangular room with a hexagonal box.', 'You are in a triangular room with a hexagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a hexagonal room with a circular box.', 'You are in a hexagonal room with a circular box.', 'You are in a hexagonal room with a circular box.', 'You are in a hexagonal room with a circular box.', 'You are in a hexagonal room with a circular box.', 'You are in a hexagonal room with a circular box.', 'You are in a square room with a hexagonal box.', 'You are in a square room with a hexagonal box.', 'You are in a square room with a hexagonal box.', 'You are in a square room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a hexagonal room with a hexagonal box.', 'You are in a lens-shaped room with a pentagonal box.', 'You are in a lens-shaped room with a pentagonal box.', 'You are in a lens-shaped room with a square box.', 'You are in a lens-shaped room with a square box.', 'You are in a hexagonal room with a lens-shaped box.', 'You are in a hexagonal room with a lens-shaped box.', 'You are in a hexagonal room with a lens-shaped box.', 'You are in a hexagonal room with a lens-shaped box.', 'You are in a hexagonal room with a lens-shaped box.', 'You are in a hexagonal room with a lens-shaped box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in an octagonal room with a square box.', 'You are in a square room with a lens-shaped box.', 'You are in a square room with a lens-shaped box.', 'You are in a square room with a lens-shaped box.', 'You are in a square room with a lens-shaped box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a pentagonal room with a hexagonal box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a triangular room with a triangular box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a pentagonal room with a pentagonal box.', 'You are in a lens-shaped room with a hexagonal box.', 'You are in a lens-shaped room with a hexagonal box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a pentagonal room with a square box.', 'You are in a square room with an octagonal box.', 'You are in a square room with an octagonal box.', 'You are in a square room with an octagonal box.', 'You are in a square room with an octagonal box.', 'You are in a hexagonal room with a triangular box.', 'You are in a hexagonal room with a triangular box.', 'You are in a hexagonal room with a triangular box.', 'You are in a hexagonal room with a triangular box.', 'You are in a hexagonal room with a triangular box.', 'You are in a hexagonal room with a triangular box.'];
+
+let table6 = ['L', 'L', 'L', 'L', 'X', 'Z', 'Z', 'Z', 'Z', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'U', 'U', 'T', 'T', 'T', 'T', 'T', 'T', 'S', 'S', 'S', 'E', 'E', 'E', 'F', 'F', 'Y', 'Y', 'Y', 'Y', 'Y', 'L', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'C', 'C', 'C', 'C', 'O', 'O', 'O', 'O', 'O', 'O', 'J', 'J', 'J', 'J', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'S', 'S', 'S', 'H', 'Y', 'Y', 'Y', 'Y', 'N', 'N', 'N', 'N', 'N', 'A', 'A', 'A', 'G', 'G', 'G', 'G', 'V', 'V', 'V', 'V', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'Z', 'Z', 'Z', 'Z', 'B', 'B', 'B', 'B', 'B', 'B', 'V', 'V', 'V', 'V', 'V', 'P', 'P', 'P', 'J', 'J', 'J', 'X', 'X', 'X', 'X', 'E', 'E', 'E', 'E', 'E', 'T', 'T', 'T', 'T', 'M', 'M', 'M', 'I', 'I', 'I', 'I', 'I', 'H', 'H', 'H', 'H', 'H', 'H', 'B', 'B', 'B', 'B', 'R', 'R', 'R', 'R', 'R', 'R', 'N', 'N', 'C', 'C', 'K', 'K', 'K', 'K', 'K', 'K', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'F', 'F', 'F', 'F', 'O', 'O', 'O', 'O', 'O', 'A', 'A', 'A', 'I', 'I', 'I', 'I', 'I', 'K', 'K', 'G', 'G', 'G', 'G', 'G', 'W', 'W', 'W', 'W', 'M', 'M', 'M', 'M', 'M', 'M'];
+
+let different = [4, 37];
