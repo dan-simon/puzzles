@@ -45,7 +45,7 @@ let checkForStuff = function () {
 
 let miniHelpText = '(Putting "enter X Y" (without the quotes) in the input below this text will put words X and Y into that box, and tell you the output.)';
 let bigHelpText = ['List of commands:', 'enter X Y: puts words X and Y into the box in the current room, and tells you the output', 'forward: goes forward',
-'help: shows this help text', 'in: goes in', 'left: turns left', 'out: goes out', 'right: turns right',
+'help: shows this help text', 'in: goes in', 'left: turns left', 'out: goes out', 'right: turns right', 'undo: undoes the last movement you\'ve made',
 'Note: You can write any command as its first letter, and you can enter multiple commands at once by separating them by semicolons (;). The features in this note are for convenience and not part of the puzzle.'];
 
 let write = function (x) {
@@ -130,17 +130,6 @@ let loadState = function () {
   scrollMain();
 }
 
-let undo = function () {
-  if (currentState.length === 0) {
-    alert('Nothing to undo!');
-    return;
-  }
-  currentState.pop();
-  write('[Undone]');
-  write(description(currentLocation()));
-  scrollMain();
-}
-
 let newLocationMessage = function () {
   if (different.includes(currentLocation())) {
     return 'As always when you enter a new room, you get disoriented and end up facing ... hm, directions don\'t seem to make sense here.';
@@ -197,6 +186,15 @@ let move = function (x) {
       currentState.push(table3[currentLocation()]);
       write(description(currentLocation()));
     }
+  }
+  if (x === 'u') {
+    if (currentState.length === 0) {
+      write('Nothing to undo!');
+      return;
+    }
+    currentState.pop();
+    write('[Undone]');
+    write(description(currentLocation()));
   }
 }
 
@@ -322,12 +320,12 @@ let submit = function (x) {
       if (i.length > 0) {
         write('> ' + i.join(' '));
         let crucial = i[0][0].toLowerCase();
-        if ('fhilor'.includes(crucial)) {
+        if ('fhiloru'.includes(crucial)) {
           move(crucial);
         } else if (crucial === 'e') {
           enter(i.slice(1));
         } else {
-          write('Invalid command. You can use "help" to see possible commands.')
+          write('Invalid command. You can use "help" to see possible commands.');
         }
         scrollMain();
       }
