@@ -99,6 +99,10 @@ let updateLoadOptions = function () {
   }
 }
 
+let scrollMain = function () {
+  document.getElementById('main').scrollTop = document.getElementById('main').scrollHeight;
+}
+
 let saveState = function () {
   let state = getState();
   let val = document.getElementById('save').value;
@@ -109,6 +113,8 @@ let saveState = function () {
   state[val] = currentState;
   localStorage.setItem('dec-2022-state', JSON.stringify(state));
   updateLoadOptions();
+  write('[Saved "' + val + '"]');
+  scrollMain();
 }
 
 let loadState = function () {
@@ -119,8 +125,9 @@ let loadState = function () {
     return;
   }
   currentState = state[val];
-  write('[Loaded save "val"]');
+  write('[Loaded "' + val + '"]');
   write(description(currentLocation()));
+  scrollMain();
 }
 
 let undo = function () {
@@ -128,9 +135,10 @@ let undo = function () {
     alert('Nothing to undo!');
     return;
   }
+  currentState.pop();
   write('[Undone]');
   write(description(currentLocation()));
-  currentState.pop();
+  scrollMain();
 }
 
 let newLocationMessage = function () {
@@ -321,7 +329,7 @@ let submit = function (x) {
         } else {
           write('Invalid command. You can use "help" to see possible commands.')
         }
-        document.getElementById('main').scrollTop = document.getElementById('main').scrollHeight;
+        scrollMain();
       }
     }
   }
