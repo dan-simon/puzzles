@@ -37,8 +37,12 @@ body {
   text-align: center;
 }
 
-.grid td.filled {
+.grid td.shaded {
   background-color: black;
+}
+
+.grid td.highlighted {
+  background-color: lime;
 }
 
 ul.with-header:before{

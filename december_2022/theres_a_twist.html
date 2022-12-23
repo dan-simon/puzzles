@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+  <head>
+    <title>There's a Twist</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="bcrypt.min.js"></script>
+    <script src="check_answer.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <h2>There's a Twist</h2>
+    <span><a href="index.html">Back to main page</a></span>
+    <br/>
+    <br/>
+    <span class="answer-span answer-span-4">Enter your answer here: <input id="answer-4" type="text"/> <input type="submit" onclick="checkAnswer('4')" value="Check"/> <span id="check-answer-result-4"></span></span>
+    <br/>
+    <br/>
+    <br/>
+    <span>This crossword uses the following rotationally symmetric grid (not all shaded cells are given):</span>
+    <br/>
+    <br/>
+    <table class="grid">
+      <tr>
+        <td class="highlighted"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="highlighted"/>
+        <td/>
+        <td class="highlighted"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="highlighted"/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td class="highlighted"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="highlighted"/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td class="highlighted"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="highlighted"/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+        <td class="shaded"/>
+        <td/>
+      </tr>
+      <tr>
+        <td class="highlighted"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="highlighted"/>
+        <td/>
+        <td class="highlighted"/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td/>
+        <td class="highlighted"/>
+      </tr>
+    </table>
+    <ul class="with-header" header-text="Across:">
+      <li>Row 1: Love new start / Underwater areas within / Singers with ring / Train with German</li>
+      <li>Row 3: A missing atom map: easy nonprimary indication / Responded "Spinning vehicle in east; alien deceased"</li>
+      <li>Row 5: A rise in disrupted order of mammals / Typical game uses livelier starters in rear</li>
+      <li>Row 7: Everyone said "Behold!" / Excellent sparks from heart tell original story / Monsoons, if Spanish</li>
+      <li>Row 9: Activation: perhaps Echo? / Vow's ending (marriage vow): married, or unmarried? / Small collateral fish</li>
+      <li>Row 11: Testing hypothesis: "Do + 1 framing scene" / Particle makes neon within chaos in rut</li>
+      <li>Row 13: Hind's hind's hind, as Spooner would say / Detailed balance depends ultimately on distribution type</li>
+      <li>Row 15: In one step / Incur withdrawn urges / Circle decentralized ger / Nitrogen to aluminum</li>
+    </ul>
+    <ul class="with-header" header-text="Down:">
+      <li>Column 1: South Massachusetts bricklayer / Surrenders leaders shortly / AI redirected mathematician / Small following pitch</li>
+      <li>Column 3: Wild (in retrospect) pale brown Eurasian river / Led yurts to form Eastern NHL team</li>
+      <li>Column 5: Newly titled, turned... uh... east without discredit / Quietly following, critique Macs for app image</li>
+      <li>Column 7: Trenches run backwards / Refers all leads to unintended design echoes / Spun from sample</li>
+      <li>Column 9: Two and through / Error in "Were any days in 2023?" / Bunch up with</li>
+      <li>Column 11: Obvious source: a guest resort's service interruptions / Love sound of bell containing 60% pearl</li>
+      <li>Column 13: Age before, interminably, ointment is wreck rescue / Its use's weird, perhaps: hygiene in papers</li>
+      <li>Column 15: The giving senior / Dried grapes missing / Eggs, for example / Dark land changing</li>
+    </ul>
+  </body>
+</html>
