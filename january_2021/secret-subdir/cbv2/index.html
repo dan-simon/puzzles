@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Colorful Boxes</title>
+  <script src="script.js"></script>
+  <meta charset='UTF-8'>
+ </head>
+ <body>
+   <h2>Colorful Boxes</h2>
+   Give each letter from A-P a unique value from 1-20. (Ignore the values that are left.)
+   <br/>
+   (You can hover over boxes to see their color. This is for accessibility and not otherwise part of the puzzle.)
+   <hr/>
+   <span id="s1"><span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;" title="red box"></span></span>: <input id="a1"/> <span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;" title="green box"></span></span>: <input id="b1"/> <button onclick="colorBoxes(1)" title="red box, green box, blue box → yellow box, magenta box, cyan box" style="height: 1.5em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #0000dd; display: inline-block;"></span> <span style="position: relative; bottom: 0.25em;">→</span> <span style="width: 1em; height: 1em; background-color: #dddd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #dd00dd; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dddd; display: inline-block;"></span></button></span>
+   <br/>
+   <br/>
+   Outputs:
+   <table id="o1" style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   </tr>
+   </tbody>
+   </table>
+   <br/>
+   <br/>
+   Goal:
+   <table style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   <td style="width: 50px; text-align: center;">A</td>
+   <td style="width: 50px; text-align: center;">A</td>
+   <td style="width: 50px; text-align: center;">A</td>
+   <td style="width: 50px; text-align: center;">A</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">F</td>
+   <td style="width: 50px; text-align: center;">F</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">F</td>
+   <td style="width: 50px; text-align: center;">F</td>
+   <td style="width: 50px; text-align: center;">F</td>
+   <td style="width: 50px; text-align: center;">E</td>
+   <td style="width: 50px; text-align: center;">G</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   </tbody>
+   </table>
+   <hr/>
+   <span id="s2"><span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;" title="red box"></span></span>: <input id="a2"/> <span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;" title="green box"></span></span>: <input id="b2"/> <button onclick="colorBoxes(2)" title="red box, green box, blue box → yellow box, magenta box, cyan box" style="height: 1.5em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #0000dd; display: inline-block;"></span> <span style="position: relative; bottom: 0.25em;">→</span> <span style="width: 1em; height: 1em; background-color: #dddd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #dd00dd; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dddd; display: inline-block;"></span></button></span>
+   <br/>
+   <br/>
+   Outputs:
+   <table id="o2" style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   </tr>
+   </tbody>
+   </table>
+   <br/>
+   <br/>
+   Goal:
+   <table style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   <td style="width: 50px; text-align: center;">E</td>
+   <td style="width: 50px; text-align: center;">E</td>
+   <td style="width: 50px; text-align: center;">G</td>
+   <td style="width: 50px; text-align: center;">G</td>
+   <td style="width: 50px; text-align: center;">G</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">I</td>
+   <td style="width: 50px; text-align: center;">I</td>
+   <td style="width: 50px; text-align: center;">I</td>
+   <td style="width: 50px; text-align: center;">I</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">J</td>
+   <td style="width: 50px; text-align: center;">J</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   </tbody>
+   </table>
+   <hr/>
+   <span id="s3"><span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;" title="red box"></span></span>: <input id="a3"/> <span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;" title="green box"></span></span>: <input id="b3"/> <button onclick="colorBoxes(3)" title="red box, green box, blue box → yellow box, magenta box, cyan box" style="height: 1.5em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #0000dd; display: inline-block;"></span> <span style="position: relative; bottom: 0.25em;">→</span> <span style="width: 1em; height: 1em; background-color: #dddd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #dd00dd; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dddd; display: inline-block;"></span></button></span>
+   <br/>
+   <br/>
+   Outputs:
+   <table id="o3" style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   </tr>
+   </tbody>
+   </table>
+   <br/>
+   <br/>
+   Goal:
+   <table style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   <td style="width: 50px; text-align: center;">J</td>
+   <td style="width: 50px; text-align: center;">J</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   <td style="width: 50px; text-align: center;">K</td>
+   <td style="width: 50px; text-align: center;">O</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   </tbody>
+   </table>
+   <hr/>
+   <span id="s4"><span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;" title="red box"></span></span>: <input id="a4"/> <span style="position: relative; top: 0.2em;"><span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;" title="green box"></span></span>: <input id="b4"/> <button onclick="colorBoxes(4)" title="red box, green box, blue box → yellow box, magenta box, cyan box" style="height: 1.5em;"><span style="width: 1em; height: 1em; background-color: #ff0000; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #0000dd; display: inline-block;"></span> <span style="position: relative; bottom: 0.25em;">→</span> <span style="width: 1em; height: 1em; background-color: #dddd00; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #dd00dd; display: inline-block;"></span> <span style="width: 1em; height: 1em; background-color: #00dddd; display: inline-block;"></span></button></span>
+   <br/>
+   <br/>
+   Outputs:
+   <table id="o4" style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   </tr>
+   </tbody>
+   </table>
+   <br/>
+   <br/>
+   Goal:
+   <table style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   <td style="width: 50px; text-align: center;">A</td>
+   <td style="width: 50px; text-align: center;">B</td>
+   <td style="width: 50px; text-align: center;">B</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">O</td>
+   <td style="width: 50px; text-align: center;">O</td>
+   <td style="width: 50px; text-align: center;">O</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">✅</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   <td style="width: 50px; text-align: center;">❌</td>
+   </tr>
+   </tbody>
+   </table>
+   <hr/>
+   2, 3, 5, 7, ...
+   <br/>
+   <br/>
+   Extraction:
+   <table style="border-collapse: collapse;">
+   <tbody>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #ff0000; display: inline-block;" title="red box"></span></td>
+   <td style="width: 50px; text-align: center;">B</td>
+   <td style="width: 50px; text-align: center;">L</td>
+   <td style="width: 50px; text-align: center;">I</td>
+   <td style="width: 50px; text-align: center;">N</td>
+   <td style="width: 50px; text-align: center;">D</td>
+   <td style="width: 50px; text-align: center;">A</td>
+   <td style="width: 50px; text-align: center;">C</td>
+   <td style="width: 50px; text-align: center;">E</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dd00; display: inline-block;" title="green box"></span></td>
+   <td style="width: 50px; text-align: center;">F</td>
+   <td style="width: 50px; text-align: center;">G</td>
+   <td style="width: 50px; text-align: center;">H</td>
+   <td style="width: 50px; text-align: center;">J</td>
+   <td style="width: 50px; text-align: center;">K</td>
+   <td style="width: 50px; text-align: center;">M</td>
+   <td style="width: 50px; text-align: center;">O</td>
+   <td style="width: 50px; text-align: center;">P</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dddd00; display: inline-block;" title="yellow box"></span></td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #dd00dd; display: inline-block;" title="magenta box"></span></td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   </tr>
+   <tr>
+   <td style="width: 30px; text-align: left; border-right: 1px solid;"><span style="width: 1.5em; height: 1.5em; background-color: #00dddd; display: inline-block;" title="cyan box"></span></td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   <td style="width: 50px; text-align: center;">❓</td>
+   </tr>
+   </tbody>
+   </table>
+</body>
+</html>

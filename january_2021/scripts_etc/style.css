@@ -1,0 +1,93 @@
+:root {
+  --background: white;
+  --incorrect: red;
+  --correct: green;
+  --link: blue;
+}
+
+body {
+  background-color: var(--background);
+  max-width: 1000px;
+  margin: auto;
+}
+
+.incorrect {
+  color: var(--incorrect);
+}
+
+.correct {
+  color: var(--correct);
+}
+
+a:link {
+  color: var(--link);
+}
+
+.header > .incorrect {
+  color: red;
+}
+
+.header > .correct {
+  color: green;
+}
+
+.header > a:link {
+  color: blue;
+}
+
+.header {
+  background-color: #a0a0a0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.header a {
+  padding: 0 12px;
+}
+
+.box {
+  display: inline-block;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: -1px;
+  margin-right: -1px;
+  border: 1px solid black;
+}
+
+.grid {
+  border-collapse: collapse;
+}
+
+.grid td {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.grid td.unbordered {
+  border: none;
+}
+
+.grid td.default-background {
+  background-color: transparent;
+}
+
+.grid td.filled {
+  background-color: black;
+}
+
+ul.with-header:before{
+  content: attr(header-text);
+  font-weight:bold;
+  margin-left: -20px;
+}
+
+.hint {
+  background-color: black;
+}
+
+.hint:active {
+  background-color: transparent;
+}

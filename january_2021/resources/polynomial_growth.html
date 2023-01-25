@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Polynomial Growth</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="polynomial_growth_style.css"/>
+    <script src="polynomial_growth_script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div style="min-height: 30px;"></div>
+    <button onclick="setTab('main')">Main</button> <button onclick="setTab('challenges')">Challenges</button> <button onclick="setTab('options')">Options</button>
+    <br/>
+    <br/>
+    <div id="main">
+      <span>You have <span id="currency"></span> currency, and are gaining <span id="currency-per-second"></span> currency per second.</span>
+      <br id="special-challenge-text-br"/>
+      <span id="special-challenge-text"></span>
+      <br id="boost-br"/>
+      <span id="boost-text">You have <span id="boosts"></span> boost<span id="boost-plural"></span>, multiplying all producers by <span id="boost-effect"></span>x. <button id="boost-button" onclick="buyBoost()" style="width: 180px;">Buy: Cost <span id="boost-cost"></span></button> <button id="max-boost-button" onclick="buyMaxBoost()">Buy max</button></span>
+      <table style="margin-left: auto; margin-right: auto;">
+        <tbody>
+          <tr id="1-row">
+            <td style="width: 100px;">
+              Producer 1
+            </td>
+            <td style="width: 200px;">
+              <span id="1-amount"></span> (<span id="1-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="1-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="1-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-1-button" onclick="buyProducer(1)" style="width: 180px;">Buy: Cost <span id="producer-1-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-1-button" onclick="buyMaxProducer(1)">Buy max</button>
+            </td>
+          </tr>
+          <tr id="2-row">
+            <td style="width: 100px;">
+              Producer 2
+            </td>
+            <td style="width: 200px;">
+              <span id="2-amount"></span> (<span id="2-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="2-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="2-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-2-button" onclick="buyProducer(2)" style="width: 180px;">Buy: Cost <span id="producer-2-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-2-button" onclick="buyMaxProducer(2)">Buy max</button>
+            </td>
+          </tr>
+          <tr id="3-row">
+            <td style="width: 100px;">
+              Producer 3
+            </td>
+            <td style="width: 200px;">
+              <span id="3-amount"></span> (<span id="3-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="3-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="3-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-3-button" onclick="buyProducer(3)" style="width: 180px;">Buy: Cost <span id="producer-3-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-3-button" onclick="buyMaxProducer(3)">Buy max</button>
+            </td>
+          </tr>
+          <tr id="4-row">
+            <td style="width: 100px;">
+              Producer 4
+            </td>
+            <td style="width: 200px;">
+              <span id="4-amount"></span> (<span id="4-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="4-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="4-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-4-button" onclick="buyProducer(4)" style="width: 180px;">Buy: Cost <span id="producer-4-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-4-button" onclick="buyMaxProducer(4)">Buy max</button>
+            </td>
+          </tr>
+          <tr id="5-row">
+            <td style="width: 100px;">
+              Producer 5
+            </td>
+            <td style="width: 200px;">
+              <span id="5-amount"></span> (<span id="5-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="5-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="5-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-5-button" onclick="buyProducer(5)" style="width: 180px;">Buy: Cost <span id="producer-5-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-5-button" onclick="buyMaxProducer(5)">Buy max</button>
+            </td>
+          </tr>
+          <tr id="6-row">
+            <td style="width: 100px;">
+              Producer 6
+            </td>
+            <td style="width: 200px;">
+              <span id="6-amount"></span> (<span id="6-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="6-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="6-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-6-button" onclick="buyProducer(6)" style="width: 180px;">Buy: Cost <span id="producer-6-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-6-button" onclick="buyMaxProducer(6)">Buy max</button>
+            </td>
+          </tr>
+          <tr id="7-row">
+            <td style="width: 100px;">
+              Producer 7
+            </td>
+            <td style="width: 200px;">
+              <span id="7-amount"></span> (<span id="7-bought"></span> bought)
+            </td>
+            <td style="width: 100px;">
+              <span id="7-multiplier"></span>x
+            </td>
+            <td style="width: 180px;">
+              +<span id="7-per-second"></span> per second
+            </td>
+            <td style="width: 200px;">
+              <button id="producer-7-button" onclick="buyProducer(7)" style="width: 180px;">Buy: Cost <span id="producer-7-cost"></span></button>
+            </td>
+            <td style="width: 120px;">
+              <button id="max-producer-7-button" onclick="buyMaxProducer(7)">Buy max</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="prestige-div">
+        <span><span id="prestige-sentence"></span> <button id="prestige-button" onclick="prestige()">Prestige</button></span>
+        <br/>
+        <span>Your new prestige power is your currency^(1/6) divided by 4. All producers are multiplied by prestige power.</span>
+        <br/>
+        <span>Prestige resets everything but prestige power.</span>
+      </div>
+    </div>
+    <div id="challenges" style="display: none;">
+      <span>You are currently <span id="challenge-text"></span></span>
+      <br/>
+      <span>Entering or exiting a challenge resets everything.</span>
+      <br/>
+      <button id="start-challenge-0" onclick="startChallenge(0)" style="width: 200px;">Exit challenge</button>
+      <table style="margin-left: auto; margin-right: auto;">
+        <tbody>
+          <tr>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-1" onclick="startChallenge(1)" style="width: 200px;">Start Challenge 1</button>
+                <br/>
+                Challenge 1: The multiplier per producer purchase is 1x rather than 2x. You can't prestige.
+              </div>
+            </td>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-2" onclick="startChallenge(2)" style="width: 200px;">Start Challenge 2</button>
+                <br/>
+                Challenge 2: Buying a producer resets the amounts of lower-numbered producers to 0.
+              </div>
+            </td>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-3" onclick="startChallenge(3)" style="width: 200px;">Start Challenge 3</button>
+                <br/>
+                Challenge 3: The multiplier per producer purchase is 1x rather than 2x, but Producer 3 is multiplied by (Producer 1 amount)^0.375 (always at least 1).
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-4" onclick="startChallenge(4)" style="width: 200px;">Start Challenge 4</button>
+                <br/>
+                Challenge 4: There's a linearly increasing multiplier on Producer 1 which starts at 0 and increases by 1 every 10 minutes. This multiplier resets on prestige.
+              </div>
+            </td>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-5" onclick="startChallenge(5)" style="width: 200px;">Start Challenge 5</button>
+                <br/>
+                Challenge 5: All producer cost multipliers per purchase are squared. All producers are multiplied by currency^(1/180) (always at least 1).
+              </div>
+            </td>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-6" onclick="startChallenge(6)" style="width: 200px;">Start Challenge 6</button>
+                <br/>
+                Challenge 6: There are 7 producers, but the multiplier per producer purchase is 1x rather than 2x and the prestige power multiplier affects only even-numbered producers.
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-7" onclick="startChallenge(7)" style="width: 200px;">Start Challenge 7</button>
+                <br/>
+                Challenge 7: All producers are multiplied by 0.010x, but there are boosts with a starting cost and cost increase per purchase of 4.056e31 that multiply all producers by 4x each and reset on prestige.
+              </div>
+            </td>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-8" onclick="startChallenge(8)" style="width: 200px;">Start Challenge 8</button>
+                <br/>
+                Challenge 8: There's a multiplier to all producers proportional to time^0.400, starting at 0 and reaching 1 after 1 minute. This multiplier resets on purchase and on prestige.
+              </div>
+            </td>
+            <td>
+              <div class="challengediv">
+                <button id="start-challenge-9" onclick="startChallenge(9)" style="width: 200px;">Start Challenge 9</button>
+                <br/>
+                Challenge 9: The cost of Producer 3 increases by 2.522e117x every time you purchase it, instead of 1.074e9x.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="options" style="display: none;">
+      <button onclick="saveGame()">Save</button> <button onclick="exportGame()">Export</button> <button onclick="loadGameFromInput()">Load</button> <button onclick="resetGame()">RESET</button>
+      <br/>
+      <span>The export/load input below may be helpful for storing saves at multiple points in progression, but figuring out how saves are encrypted is not necessary or helpful for this puzzle. Saves exported via "Export save" will appear in the input, where you can put them in a file; you can load previously exported saves by putting them in the input and clicking "Load save".</span>
+      <br/>
+      <span>Exported save/place to put loaded save: <input id="export-load-input"></input>
+    </div>
+  </body>
+</html>

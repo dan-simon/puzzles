@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Synesthesia</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Synesthesia: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Synesthesia</h2>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

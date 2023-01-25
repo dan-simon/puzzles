@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Shells</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Shells: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Shells</h2>
+    <span style="word-wrap: break-word;">GVPAVLSIWNMAXJRQPXUXJJWAPNEGGCMNVEDRFAMKMLBAHSRWWPFFXGBGASHAVXJNBFENRLUSHVFPWEGFWHPSAHHZRYAEGAIQHTRGLKBGVOFLIGAEVBAAGAAERJPNFTRFLLSHMEHONBKEHZHBETFFZHBVHFNBKNVYLUZFKUXW</span>
+    <hr/>
+    <ul>
+      <li>AEHMNT</li>
+      <li>CHIKNOO</li>
+      <li>ADFIRSY</li>
+      <li>AADEFLMNNTU</li>
+      <li>EGMNTU</li>
+    </ul>
+    <hr/>
+    <ul>
+      <li>Musician's filler with re twice replacing third (7)</li>
+      <li>Zero read suspected origins for tarot card (6)</li>
+      <li>Race Monday around a rat; hard at start (8)</li>
+      <li>Fruit's penny apiece (5)</li>
+      <li>Prepare in Lapland (4)</li>
+    </ul>
+    <hr/>
+    <table class="grid">
+      <tbody>
+        <tr>
+          <td>R</td>
+          <td>V</td>
+          <td>O</td>
+          <td>R</td>
+          <td>R</td>
+          <td>D</td>
+          <td>O</td>
+          <td>I</td>
+          <td>M</td>
+          <td>I</td>
+          <td>Q</td>
+          <td>S</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>M</td>
+          <td>X</td>
+          <td>U</td>
+          <td>N</td>
+          <td>V</td>
+          <td>J</td>
+          <td>N</td>
+          <td>E</td>
+          <td>A</td>
+          <td>O</td>
+          <td>I</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>C</td>
+          <td>I</td>
+          <td>M</td>
+          <td>I</td>
+          <td>M</td>
+          <td>P</td>
+          <td>A</td>
+          <td>O</td>
+          <td>U</td>
+          <td>E</td>
+          <td>D</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>I</td>
+          <td>D</td>
+          <td>L</td>
+          <td>N</td>
+          <td>N</td>
+          <td>D</td>
+          <td>S</td>
+          <td>T</td>
+          <td>E</td>
+          <td>A</td>
+          <td>I</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>H</td>
+          <td>A</td>
+          <td>M</td>
+          <td>L</td>
+          <td>E</td>
+          <td>N</td>
+          <td>H</td>
+          <td>V</td>
+          <td>T</td>
+          <td>I</td>
+          <td>I</td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td>G</td>
+          <td>T</td>
+          <td>C</td>
+          <td>F</td>
+          <td>E</td>
+          <td>W</td>
+          <td>O</td>
+          <td>B</td>
+          <td>I</td>
+          <td>O</td>
+          <td>O</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>Z</td>
+          <td>I</td>
+          <td>C</td>
+          <td>O</td>
+          <td>E</td>
+          <td>N</td>
+          <td>A</td>
+          <td>A</td>
+          <td>E</td>
+          <td>L</td>
+          <td>W</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>Z</td>
+          <td>O</td>
+          <td>B</td>
+          <td>S</td>
+          <td>T</td>
+          <td>G</td>
+          <td>N</td>
+          <td>C</td>
+          <td>E</td>
+          <td>E</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>L</td>
+          <td>N</td>
+          <td>T</td>
+          <td>D</td>
+          <td>J</td>
+          <td>R</td>
+          <td>X</td>
+          <td>I</td>
+          <td>E</td>
+          <td>I</td>
+          <td>U</td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>U</td>
+          <td>A</td>
+          <td>R</td>
+          <td>M</td>
+          <td>T</td>
+          <td>I</td>
+          <td>P</td>
+          <td>A</td>
+          <td>A</td>
+          <td>U</td>
+          <td>Q</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>J</td>
+          <td>H</td>
+          <td>P</td>
+          <td>I</td>
+          <td>N</td>
+          <td>E</td>
+          <td>A</td>
+          <td>P</td>
+          <td>P</td>
+          <td>L</td>
+          <td>E</td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td>E</td>
+          <td>Q</td>
+          <td>H</td>
+          <td>R</td>
+          <td>D</td>
+          <td>R</td>
+          <td>R</td>
+          <td>T</td>
+          <td>R</td>
+          <td>L</td>
+          <td>S</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul>
+      <li>???????????</li>
+      <li>?????</li>
+      <li>?????????</li>
+      <li>?????????</li>
+      <li>?????????</li>
+    </ul>
+    <hr/>
+    <ul>
+      <li>19 21 14 2 5 1 13 19</li>
+      <li>FJRRGCBGNGB</li>
+      <li>GSIVHSVI</li>
+      <li>...- ..- .-.. -.-. .- -.</li>
+      <li>⠺⠑⠊⠟⠊</li>
+    </ul>
+    <hr/>
+    <hr/>
+    Animals:
+    <ul>
+      <li>4 _ _ _</li>
+      <li>_ 5 _ _ _</li>
+      <li>_ _ _ _ 2 _</li>
+      <li>_ 1 _ _ _ _ _</li>
+      <li>3 _ _ _ _ _ _ _</li>
+    </ul>
+    <hr/>
+    Languages:
+    <ul>
+      <li>_ 2</li>
+      <li>4 3 _ _</li>
+      <li>1 _ _ _ _</li>
+      <li>_ _ _ _ _ 6</li>
+      <li>_ _ _ _ _ _ 5</li>
+    </ul>
+    <hr/>
+    Locations:
+    <ul>
+      <li>_ _ _ _ _ 6</li>
+      <li>_ _ _ _ 2 _ 8</li>
+      <li>_ _ 7 _ _ _ _ _ _</li>
+      <li>4 _ _ _ _ _ _ _ _ 1</li>
+      <li>_ _ _ _ 3 _ _ _ _ 5 _ _</li>
+    </ul>
+    <hr/>
+    Families:
+    <ul>
+      <li>_ _ _ 2 _ _ _ _</li>
+      <li>_ _ _ _ 7 4 _ _ _ _ _</li>
+      <li>_ _ _ _ 6 5 _ _ _ _ _ _</li>
+      <li>_ _ _ _ _ 9 _ 1 _ _ _ _ _</li>
+      <li>_ _ 3 _ _ _ _ 8 _ _ _ _ _ _</li>
+    </ul>
+    <hr/>
+    Sectors:
+    <ul>
+      <li>_ _ _ 1 _ 3</li>
+      <li>_ _ 8 _ _ _ _ 5 _</li>
+      <li>10 _ _ _ _ _ _ 4 _ _</li>
+      <li>_ _ 6 7 _ _ _ _ _ _ _</li>
+      <li>_ _ _ 2 _ _ _ _ _ _ _ _ _ 9 _ _ _ _ _ _ _</li>
+    </ul>
+    <hr/>
+    <hr/>
+    <ul>
+      <li>Meta answers:</li>
+      <li>_ _ 3 6 _</li>
+      <li>_ _ _ 8 _ 4</li>
+      <li>_ _ _ _ _ 1 _ _</li>
+      <li>_ _ 2 _ _ 9 _ _ _</li>
+      <li>5 7 _ _ _ _ _ _ _ _</li>
+    </ul>
+    <hr/>
+    <hr/>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

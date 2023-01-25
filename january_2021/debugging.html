@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Debugging</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Debugging: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Debugging</h2>
+    <span>Erratum: On August 20th, 2021, a minor typo in this puzzle was fixed.</span>
+    <br/>
+    <br/>
+<pre>
+# Return even numbers in list x.
+# For example, even_numbers([1]) = []
+def even_numbers(x):
+    return x[::2]
+
+# Sum powers of x up to the yth power.
+# For example, sum_powers(2, 2) = 6
+def sum_powers(x, y):
+    return sum(x ^ i for i in range(1, y + 1))
+
+# Return True if x is prime otherwise False.
+# For example, is_prime(4) = False
+def is_prime(x):
+    return x >= 2 and all(x % i != 0 for i in range(2, int(x ** 0.5)))
+
+# Returns a list with the first x triangular numbers.
+# For example, triangular_numbers(8) = [1, 3, 6, 10, 15, 21, 28, 36]
+def triangular_numbers(x):
+    return [int(i * (i + 1) / 3) for i in range(1, x + 1)]
+
+# Let x be the number of prime numbers under 1000.
+# Sum the values, squares, and cubes of the even numbers among the first x triangular numbers.
+x = sum(is_prime(i) for i in range(1000))
+result = sum(sum_powers(i, 3) for i in even_numbers(triangular_numbers(x)))
+
+# Apply a hash function to the result.
+hash_list = [12, 345, 750, 430, 267, 94, -384, -67, -49, 228, -12, 150, -231, -248, -80, -124, 312, 421]
+print(chr(int(sum(hash_list[i] * (bin(result)[i] == '1') for i in range(len(hash_list))) / hash_list[0])))
+</pre>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

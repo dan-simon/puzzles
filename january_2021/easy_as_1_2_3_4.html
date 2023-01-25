@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Easy as 1, 2, 3, 4, ...</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Easy as 1, 2, 3, 4, ...: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Easy as 1, 2, 3, 4, ...</h2>
+    <ul>
+      <li>Abet predecessor (5)</li>
+      <li>Alum, for example, in Star Wars (4)</li>
+      <li>Australian relative of hare (3)</li>
+      <li>Calf meta (4)</li>
+      <li>Closest living relative of guar (7)</li>
+      <li>Combination with order (11)</li>
+      <li>Country associated with khan (5)</li>
+      <li>Distance per item (5)</li>
+      <li>First Mystery Hunt icon (5)</li>
+      <li>Flue that is often refined to make others (9)</li>
+      <li>Foal material that can be broken (5)</li>
+      <li>Front half of bima (10)</li>
+      <li>Knotted part of hose (4)</li>
+      <li>Largest pose-using country (9)</li>
+      <li>Male toga (5)</li>
+      <li>Neat continent (6)</li>
+      <li>Non-blue part of tale (5)</li>
+      <li>One of five protrusions from lamp (6)</li>
+      <li>Prefix for twice the number of sheets per mare (4)</li>
+      <li>Name for ring in a photograph (5)</li>
+      <li>Type of peat invented in 1930 (6)</li>
+      <li>Ulna in English rather than Latin (4)</li>
+      <li>What statements from a rail are (5)</li>
+      <li>???????????????????????? (8)</li>
+    </ul>
+    <ul>
+      <li><span class="box">_</span> _ _ _ _ _ _ _ _ _ _</li>
+      <li>_ _ _ <span class="box">_</span></li>
+      <li>_ <span class="box">_</span> _ _ _ _ _</li>
+      <li>_ _ _ _ <span class="box">_</span></li>
+      <li>_ _ <span class="box">_</span> _ _ _ _ _ _</li>
+      <li>_ _ _ _ _ _ <span class="box">_</span> _ _</li>
+      <li>_ _ _ <span class="box">_</span></li>
+      <li><span class="box">_</span> _ _ _ _</li>
+      <li>_ <span class="box">_</span> _ _</li>
+      <li>_ <span class="box">_</span> _ _ _</li>
+      <li><span class="box">_</span> _ _</li>
+      <li><span class="box">_</span> _ _ _</li>
+      <li><span class="box">_</span> _ _ _ _</li>
+      <li><span class="box">_</span> _ _ _ _ _</li>
+      <li>_ _ _ <span class="box">_</span> _ _ _ _</li>
+      <li>_ <span class="box">_</span> _ _ _ _</li>
+      <li><span class="box">_</span> _ _ _ _</li>
+      <li><span class="box">_</span> _ _ _ _ _</li>
+      <li>_ _ _ _ <span class="box">_</span></li>
+      <li>_ _ _ _ _ _ _ <span class="box">_</span> _ _</li>
+      <li>_ _ _ <span class="box">_</span> _</li>
+      <li>_ _ _ <span class="box">_</span> _</li>
+      <li><span class="box">_</span> _ _ _</li>
+      <li>_ _ _ _ <span class="box">_</span></li>
+    </ul>
+    <span>Letters in above blanks:</span>
+    <br/>
+    <span style="word-wrap: break-word;">AAAAAAAAAABBBCCCDDDEEEEEEEEEEEEEEEEEEEEEEFFGGGGGHHHIIIIIIIKLLLLLLLLLMMMMMNNNNNNNNNNNOOOOOOOPPPPPPPRRRRRRRRSSSSSSSSTTTTTTTTTUUUUUVYYY????????</span>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

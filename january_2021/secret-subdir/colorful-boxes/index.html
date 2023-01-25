@@ -1,0 +1,767 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Colorful Boxes</title>
+    <script src="script.js"></script>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+<span id="s1">🟥: <input id="a1"/> 🟨: <input id="b1"/> <button onclick="colorBoxes(1)">🟥🟨🟦➡️🟧🟩🟪</button></span>
+<br/>
+<br/>
+<table id="t1" style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟥, 🟨</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟧</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟩</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟪</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<table style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟥, 🟨
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+10, 5
+</td>
+<td style="width: 50px;">
+10, ?
+</td>
+<td style="width: 50px;">
+14, ι
+</td>
+<td style="width: 50px;">
+δ, 11
+</td>
+<td style="width: 50px;">
+?, 14
+</td>
+<td style="width: 50px;">
+9, ?
+</td>
+<td style="width: 50px;">
+10, ζ
+</td>
+<td style="width: 50px;">
+μ, 3
+</td>
+<td style="width: 50px;">
+2, ?
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟧
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟩
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟪
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<span id="s2">🟥: <input id="a2"/> 🟨: <input id="b2"/> <button onclick="colorBoxes(2)">🟥🟨🟦➡️🟧🟩🟪</button></span>
+<br/>
+<br/>
+<table id="t2" style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟥, 🟨</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟧</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟩</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟪</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<table style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟥, 🟨
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+12, 3
+</td>
+<td style="width: 50px;">
+?, 12
+</td>
+<td style="width: 50px;">
+8, β
+</td>
+<td style="width: 50px;">
+ν, 3
+</td>
+<td style="width: 50px;">
+ε, 3
+</td>
+<td style="width: 50px;">
+?, 12
+</td>
+<td style="width: 50px;">
+12, ?
+</td>
+<td style="width: 50px;">
+λ, 3
+</td>
+<td style="width: 50px;">
+5, ?
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟧
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟩
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟪
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<span id="s3">🟥: <input id="a3"/> 🟨: <input id="b3"/> <button onclick="colorBoxes(3)">🟥🟨🟦➡️🟧🟩🟪</button></span>
+<br/>
+<br/>
+<table id="t3" style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟥, 🟨</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟧</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟩</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟪</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<table style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟥, 🟨
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+10, 2
+</td>
+<td style="width: 50px;">
+1, ?
+</td>
+<td style="width: 50px;">
+5, θ
+</td>
+<td style="width: 50px;">
+π, 6
+</td>
+<td style="width: 50px;">
+?, 7
+</td>
+<td style="width: 50px;">
+?, 9
+</td>
+<td style="width: 50px;">
+ξ, 2
+</td>
+<td style="width: 50px;">
+1, ?
+</td>
+<td style="width: 50px;">
+5, α
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟧
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟩
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟪
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<span id="s4">🟥: <input id="a4"/> 🟨: <input id="b4"/> <button onclick="colorBoxes(4)">🟥🟨🟦➡️🟧🟩🟪</button></span>
+<br/>
+<br/>
+<table id="t4" style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟥, 🟨</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟧</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟩</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟪</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<table style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟥, 🟨
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+9, 13
+</td>
+<td style="width: 50px;">
+5, ?
+</td>
+<td style="width: 50px;">
+10, ?
+</td>
+<td style="width: 50px;">
+ο, 4
+</td>
+<td style="width: 50px;">
+η, 5
+</td>
+<td style="width: 50px;">
+κ, 7
+</td>
+<td style="width: 50px;">
+?, 13
+</td>
+<td style="width: 50px;">
+γ, 8
+</td>
+<td style="width: 50px;">
+2, ?
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟧
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟩
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟪
+</td>
+<td style="width: 50px; border-right: 1px solid;">
+✅
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+✅
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+<td style="width: 50px;">
+❌
+</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<span id="s5">🟥: <input id="a5"/> 🟨: <input id="b5"/> <button onclick="colorBoxes(5)">🟥🟨🟦➡️🟧🟩🟪</button></span>
+<br/>
+<br/>
+<table id="t5" style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟥, 🟨</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟧</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟩</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">🟪</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+<table style="border-collapse: collapse;">
+<tbody>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟥, 🟨
+</td>
+<td style="width: 50px;">
+α, β
+</td>
+<td style="width: 50px;">
+γ, δ
+</td>
+<td style="width: 50px;">
+ε, ζ
+</td>
+<td style="width: 50px;">
+η, θ
+</td>
+<td style="width: 50px;">
+ι, κ
+</td>
+<td style="width: 50px;">
+λ, μ
+</td>
+<td style="width: 50px;">
+ν, ξ
+</td>
+<td style="width: 50px;">
+ο, π
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟧
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟩
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+</tr>
+<tr>
+<td style="width: 50px; border-right: 1px solid;">
+🟪
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+<td style="width: 50px;">
+❓
+</td>
+</tr>
+</tbody>
+</table>
+  </body>
+</html>

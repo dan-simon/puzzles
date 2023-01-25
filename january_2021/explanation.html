@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Explanation</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h2>Explanation</h2>
+    <h4>Unlocks</h4>
+    <span>You start with 3 puzzles unlocked. After 3 hours, and every 6 hours thereafter, you unlock another puzzle. Solving a normal puzzle unlocks another puzzle (so it's equivalent to waiting 6 hours). Solving a metapuzzle acts like half of a puzzle unlock (so it's equivalent to waiting 3 hours).</span>
+    <br/>
+    <span>Metapuzzles unlock differently. They unlock once you have both unlocked all the puzzles going into the metapuzzle and solved at least all but 2 of those puzzles. (Since metapuzzles unlock differently, they're only counted as half of a puzzle unlock as described above to avoid too many puzzles being open at once too quickly.)</span>
+    <hr/>
+    <h4>Guesses</h4>
+    <span>Once you unlock a puzzle, you have 5 guesses on it. Guessing an answer uses a guess. You get another guess every 30 minutes. If you don't have any guesses on a puzzle, you need to wait to guess an answer to it until you get another guess.</span>
+    <br/>
+    <span>Guesses are per-puzzle; there's no way to transfer guesses on one puzzle to another. Metapuzzle guesses work just like regular puzzle guesses.</span>
+    <hr/>
+    <a href="index.html">Go back to the list of puzzles.</a>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

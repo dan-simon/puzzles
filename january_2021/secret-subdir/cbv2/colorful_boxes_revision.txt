@@ -1,0 +1,43 @@
+naive = lambda x, y, l: (x + y in l, y + 1 in l, x + 1 in l)
+get = lambda x, y, z, l: (x + y in l, y + z in l, x + z in l)
+t = lambda l, n: {(i, j): naive(i, j, l) for i in range(1, n + 1) for j in range(1, n + 1)}
+conv = lambda x: [tuple(k == '1' for k in i[j:j+3]) for i in x.split() for j in (0, 3)]
+extr = lambda x: '\n'.join(''.join('X.'[j[i] == j[2]] for j in x) for i in (1, 0))
+
+100000 101110 011100 110000 111000 101001 100010
+010100 011110 011100 011100 100000 100100 101000
+
+⠁⠝⠎⠃⠇⠥⠑
+⠊⠞⠎⠎⠁⠉⠅
+
+sequences:
+
+fibonacci numbers
+powers of two
+squares
+triangular numbers
+
+primes for extraction + the cute BLIND thing
+
+🦁 = ?
+
+actually, who knows
+
+? L: (False, False, True) (L + 1 = False, 20 = False)
+I ?: (True, False, True) (I + 1 = True, 2 = True)
+? O: (False, True, False) (O + 1 = True, 4 = True)
+N ?: (True, False, False) (N + 1 = False, 12 = False)
+
+powers of 2, sadly, don't actually work
+
+ok, here we're reading one thing: 2 and 4, not 12 and 20
+if we swapped, we could get 20, none of 2, 4, 12
+
+I think you can easily do "all variables have different values 1-20"
+
+and just skip 5, 10, 15, 20, say
+
+fibonacci
+primes
+squares
+triangular

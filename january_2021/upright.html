@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Upright</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Upright: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Upright</h2>
+    <span>Erratum: On August 15th, 2021, the description of this puzzle was changed to be more clear.</span>
+    <br/>
+    <br/>
+    <span>Divide the below grid into ten rectangles. Each grid cell is in exactly one rectangle. The number in a numbered grid cell is the sum of the number of cells in its rectangle above it, the number of cells in its rectangle directly to its right, and one for it itself. For example, a numbered cell at the bottom left of a 6x5 rectangle (6 high, 5 across) would have the number 5 (5 above) + 4 (4 to the right) + 1 (itself) = 10. A numbered cell in the middle of an 11x9 rectangle would also have the number 10. All but one rectangle contains exactly one number (the remaining rectangle has no number).</span>
+    <br/>
+    <br/>
+    <table class="grid">
+      <tbody>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td>4</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td>8</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td>3</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td>5</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td>6</td>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td>1</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+        </tr>
+        <tr>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td>9</td>
+          <td/>
+          <td/>
+          <td/>
+          <td/>
+          <td>7</td>
+          <td/>
+          <td/>
+        </tr>
+      </tbody>
+    </table>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>A Special Puzzle</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to A Special Puzzle: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>A Special Puzzle</h2>
+    <span>Erratum: On August 23rd, 2021, flavortext was added to this puzzle.</span>
+    <br/>
+    <br/>
+    <span style="font-style:italic;">I measure how long my travels take by listening to music, but no one else agrees with me.</span>
+    <br/>
+    <br/>
+    <span>Distances are given in the frame of the start and end (which are stationary with respect to each other). Round ratios to one decimal place. Round differences to the nearest minute.</span>
+    <ul>
+      <li>I love it...seem so easy (distance: 26 light-minutes) (6.7)</li>
+      <li>I wanna follow...than he can (distance: 29 light-minutes) (5.6)</li>
+      <li>If you don't...me (I'm levitating) (distance: 9 light-minutes) (3.4)</li>
+      <li>Loving him is...Trouble, trouble, trouble (distance: 13 light-minutes) (6.5)</li>
+      <li>Prisoner, prisoner Locked...(Loved by you) (distance: 24 light-minutes) (5.5)</li>
+      <li>The club isn't...here for you (distance: 20 light-minutes) (2.7)</li>
+      <li>Yeah, breakfast at...next Yeah, yee (distance: 14 light-minutes) (6.6)</li>
+    </ul>
+    <ul>
+      <li>3:00 difference: 14.3</li>
+      <li>6:00 difference: 5.1</li>
+      <li>9:00 difference: 4.9</li>
+      <li>10:00 difference: 10.13</li>
+      <li>15:00 difference: 8.6</li>
+      <li>16:00 difference: 12.11</li>
+      <li>18:00 difference: 2.7</li>
+    </ul>
+    <span>1 2 3 4 5 6 7 8 9 10 11 12 13 14</span>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

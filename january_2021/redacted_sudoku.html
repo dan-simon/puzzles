@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Redacted Sudoku</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Redacted Sudoku: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Redacted Sudoku</h2>
+    <span>Erratum: On August 15th, 2021, the description of this puzzle was changed to be more clear.</span>
+    <br/>
+    <br/>
+    <span>Put numbers from 0-10 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10) in the below grid so each row, column, and 3x3 box has each such number once. Numbers outside the grid are the sum of the numbers between the 0 and the 10 in the corresponding row or column (not counting numbers in the same square as the 0 or 10). For example, if a row or column had the spaces (0 + 6), 5, 1, (2, 3), 10, 4, 7, 8, 9, or (6 + 10), 5, 1, (2, 3), 0, 4, 7, 8, 9, the number outside the grid would be 5 + 1 + 2 + 3 = 11. Each square has at least one number in it. Squares with +, and only squares with +, have more than one number in them.</span>
+    <br/>
+    <br/>
+    <table class="grid">
+      <tbody>
+        <tr>
+          <td class="unbordered"/>
+          <td class="unbordered">14</td>
+          <td class="unbordered">8</td>
+          <td class="unbordered">0</td>
+          <td class="unbordered">25</td>
+          <td class="unbordered">3</td>
+          <td class="unbordered">8</td>
+          <td class="unbordered">23</td>
+          <td class="unbordered">0</td>
+          <td class="unbordered">3</td>
+        </tr>
+        <tr>
+          <td class="unbordered">0</td>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;">0</td>
+          <td style="border-top: solid; border-right: solid;">+</td>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;"/>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;"/>
+        </tr>
+        <tr>
+          <td class="unbordered">15</td>
+          <td style="border-left: solid;"/>
+          <td style=""/>
+          <td style="border-right: solid;"/>
+          <td style="border-left: solid;">+</td>
+          <td style=""/>
+          <td style="border-right: solid;">+</td>
+          <td style="border-left: solid;">4</td>
+          <td style=""/>
+          <td style="border-right: solid;">6</td>
+        </tr>
+        <tr>
+          <td class="unbordered">10</td>
+          <td style="border-bottom: solid; border-left: solid;"/>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;"/>
+          <td style="border-bottom: solid; border-left: solid;">9</td>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;"/>
+          <td style="border-bottom: solid; border-left: solid;"/>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;">+</td>
+        </tr>
+        <tr>
+          <td class="unbordered">25</td>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;">+</td>
+          <td style="border-top: solid; border-right: solid;">7</td>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;"/>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;"/>
+        </tr>
+        <tr>
+          <td class="unbordered">20</td>
+          <td style="border-left: solid;"/>
+          <td style=""/>
+          <td style="border-right: solid;"/>
+          <td style="border-left: solid;">2</td>
+          <td style="">+</td>
+          <td style="border-right: solid;"/>
+          <td style="border-left: solid;"/>
+          <td style=""/>
+          <td style="border-right: solid;"/>
+        </tr>
+        <tr>
+          <td class="unbordered">19</td>
+          <td style="border-bottom: solid; border-left: solid;"/>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;"/>
+          <td style="border-bottom: solid; border-left: solid;"/>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;"/>
+          <td style="border-bottom: solid; border-left: solid;">1</td>
+          <td style="border-bottom: solid;">+</td>
+          <td style="border-bottom: solid; border-right: solid;"/>
+        </tr>
+        <tr>
+          <td class="unbordered">23</td>
+          <td style="border-top: solid; border-left: solid;">+</td>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;"/>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;">8</td>
+          <td style="border-top: solid; border-left: solid;"/>
+          <td style="border-top: solid;"/>
+          <td style="border-top: solid; border-right: solid;"/>
+        </tr>
+        <tr>
+          <td class="unbordered">6</td>
+          <td style="border-left: solid;">5</td>
+          <td style=""/>
+          <td style="border-right: solid;">10</td>
+          <td style="border-left: solid;">+</td>
+          <td style=""/>
+          <td style="border-right: solid;">+</td>
+          <td style="border-left: solid;"/>
+          <td style=""/>
+          <td style="border-right: solid;"/>
+        </tr>
+        <tr>
+          <td class="unbordered">21</td>
+          <td style="border-bottom: solid; border-left: solid;"/>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;"/>
+          <td style="border-bottom: solid; border-left: solid;"/>
+          <td style="border-bottom: solid;"/>
+          <td style="border-bottom: solid; border-right: solid;"/>
+          <td style="border-bottom: solid; border-left: solid;">+</td>
+          <td style="border-bottom: solid;">3</td>
+          <td style="border-bottom: solid; border-right: solid;"/>
+        </tr>
+      </tbody>
+    </table>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Four in One</title>
+    <link rel="shortcut icon" type="image/x-icon" href="scripts_etc/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="scripts_etc/style.css"/>
+    <script src="scripts_etc/script.js"></script>
+    <script src="solutions/bcrypt.min.js"></script>
+    <script src="solutions/check_answer.js"></script>
+    <script src="solutions/script.js"></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html">Back to puzzle list</a>
+      <br/>
+      Answer to Four in One: <input id="answer" type="text" onkeydown="maybeCheckThisAnswer(event)"/><button onclick="checkThisAnswer()">Check</button> <span id="check-answer-result"></span>
+      <br/>
+      <span id="answer-status">something</span>
+    </div>
+    <h2>Four in One</h2>
+    <span>Erratum: On August 16th, 2021, a typo in this puzzle was fixed.</span>
+    <br/>
+    <br/>
+    <ul>
+      <li>IPO component? = 1 30 9 16 2 8</li>
+      <li>Time introduced in England in 1840? = 11 13 5 1 29 14 21</li>
+      <li>^ and & operators, for example = 8 19 9 21 4 33 15</li>
+      <li>Feature of fly orchid or cuckoo = 6 25 17 34 5 12 19</li>
+      <li>Type of crossing in Detroit, perhaps = 7 12 16 32 36 17</li>
+      <li>What two is? = 28 22 23 11 15 14 20</li>
+      <li>Story featuring the Pevensies? = 20 4 18 26 27 7 35 3 24</li>
+      <li>Shape that's also the name of an instrument = 3 10 6 13 31 18 2 10</li>
+    </ul>
+    <ul>
+      <li>1 2 3 _ 4</li>
+      <li>5 _ 6 7 8</li>
+      <li>9 10 _ 11 12</li>
+      <li>_ 13 14 15 16</li>
+      <li>17 _ 18 19 20</li>
+      <li>21 22 23 24 _</li>
+      <li>25 26 27 _ 28</li>
+      <li>29 _ 30 31 32</li>
+      <li>33 34 _ 35 36</li>
+    </ul>
+    <br/>
+    <span>Four partial answers (don't try submitting these):</span>
+    <ul>
+      <li>A = C _ _ _ _ _ _ _ _</li>
+      <li>B = L _ _ _ _ _ _</li>
+      <li>C = L _ _ _</li>
+      <li>D = P _ _ _ _ _ _ _</li>
+    </ul>
+    <br/>
+    <span>B C that's D's A = ?</span>
+    <hr/>
+    Background color: <select id="color-select">
+      <option value="aqua">Aqua</option>
+      <option value="blue">Blue</option>
+      <option value="fuchsia">Fuchsia</option>
+      <option value="green">Green</option>
+      <option value="lime">Lime</option>
+      <option value="orange">Orange</option>
+      <option value="purple">Purple</option>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </body>
+</html>
