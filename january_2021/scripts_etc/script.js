@@ -69,7 +69,9 @@ function setColorWithinPage(c) {
   document.documentElement.style.setProperty('--link', c === 'blue' ? 'aqua' : 'blue');
   let el = document.getElementById('color-select');
   el.value = c;
+  loadHuntState();
   state.color = c;
+  localStorage.setItem('january-2021-hunt-state', btoa(JSON.stringify(state)));
 }
 
 function checkForChangedPuzzleNames() {
@@ -106,7 +108,7 @@ function getHuntState() {
 function loadHuntState(stateText, colorText) {
   let newState = getHuntState();
   for (let i in newState) {
-    if (!(i === 'guesses')) {
+    if (i !== 'guesses') {
       state[i] = newState[i];
     }
   }
