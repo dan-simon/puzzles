@@ -301,7 +301,7 @@ let secretSolutionsFunctionDontCallThisInConsole = (function () {
 })();
 
 let getUnlockTime = function (x) {
-  if (state.unlockAllCheatWithASecretNameUsingThisIsCheating) {
+  if (state.unlockAllCheat) {
     return state.start;
   }
   if (x === 'List of Puzzles' || x === 'Explanation') {
@@ -315,7 +315,7 @@ let getUnlockTime = function (x) {
     solves.push([Infinity, 0]);
     let originalStart = state.start;
     let start = state.start;
-    let score = 2.5;
+    let score = 2.5 + ('freeUnlocks' in state ? state.freeUnlocks : 0);
     for (let solve of solves) {
       let unlockTime = originalStart + unlockPer * (puzzleIndex - score);
       if (unlockTime <= solve[0]) {
@@ -330,6 +330,28 @@ let getUnlockTime = function (x) {
     // All but 2 feeders needed.
     return (feeders.every(isUnlocked) && feederSolves.length >= feeders.length - 2) ? feederSolves[feeders.length - 3][0] : Date.now() + 3.6e6; 
   }
+}
+
+let resetHuntState = function () {
+  state = initialHuntState();
+  localStorage.setItem('january-2021-hunt-state', btoa(JSON.stringify(state)));
+  window.location.reload(true);
+}
+
+let addFreeUnlock = function () {
+  // Takes into account answers submitted in intervening time
+  loadHuntState();
+  state.freeUnlocks = ('freeUnlocks' in state ? state.freeUnlocks : 0) + 1;
+  localStorage.setItem('january-2021-hunt-state', btoa(JSON.stringify(state)));
+  window.location.reload(true);
+}
+
+let unlockAll = function () {
+  // Takes into account answers submitted in intervening time
+  loadHuntState();
+  state.unlockAllCheat = true;
+  localStorage.setItem('january-2021-hunt-state', btoa(JSON.stringify(state)));
+  window.location.reload(true);
 }
 
 let updateHuntHeader = function (x) {
