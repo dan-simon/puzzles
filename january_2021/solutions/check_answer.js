@@ -89,6 +89,13 @@ let checkAnswer = function (puzzleName) {
   }
   let answer = document.getElementById('answer').value;
   let normalizedForm = answer.replace(/[^A-Za-z]/g, '').toUpperCase();
+  if (normalizedForm === '') {
+    let el = document.getElementById('check-answer-result');
+    el.className = 'incorrect';
+    el.innerHTML = 'Every answer will have at least one letter.';
+    document.getElementById('answer').value = '';
+    return;
+  }
   if (getWrongGuessesMade(puzzleName).includes(normalizedForm)) {
     let el = document.getElementById('check-answer-result');
     el.className = 'incorrect';

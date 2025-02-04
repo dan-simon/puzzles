@@ -327,8 +327,9 @@ let getUnlockTime = function (x) {
   } else {
     let feeders = secretSolutionsFunctionDontCallThisInConsole('feeders', x);
     let feederSolves = state.guesses.filter(x => feeders.includes(x[1]) && x[3] === true);
+    let feederUnlocks = feeders.map(getUnlockTime);
     // All but 2 feeders needed.
-    return (feeders.every(isUnlocked) && feederSolves.length >= feeders.length - 2) ? feederSolves[feeders.length - 3][0] : Date.now() + 3.6e6; 
+    return (feeders.every(isUnlocked) && feederSolves.length >= feeders.length - 2) ? Math.max(feederSolves[feeders.length - 3][0], Math.max(...feederUnlocks)) : Date.now() + 3.6e6;
   }
 }
 
